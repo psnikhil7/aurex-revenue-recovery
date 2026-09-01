@@ -32,7 +32,31 @@ function App() {
       <Insights />
 
       <RecoveryIntelligence />
+<footer className="aurex-footer">
+  <div className="footer-line"></div>
 
+  <div className="footer-content">
+    <div>
+      <div className="footer-brand">AUREX</div>
+      <div className="footer-subtitle">
+        AUTONOMOUS REVENUE RECOVERY AGENT
+      </div>
+    </div>
+
+    <div className="footer-creator">
+      <span>DESIGNED & BUILT BY</span>
+      <strong>NIKHIL</strong>
+      <a href="mailto:nikhilprabhakaran2005@gmail.com">
+        nikhilprabhakaran2005@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div className="footer-bottom">
+    <span>© 2026 AUREX</span>
+    <span>REVENUE RECOVERY INTELLIGENCE</span>
+  </div>
+</footer>
 
     </div>
   );
