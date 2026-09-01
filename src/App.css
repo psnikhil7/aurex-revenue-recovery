@@ -1,0 +1,7616 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Handjet:wght@400;500;600;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background: #050505;
+}
+
+body {
+  font-family: "DM Mono", monospace;
+  color: #f4eee3;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.aurex-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #050505;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 0 46px;
+
+  overflow: hidden;
+
+  background-color: #050505;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 72px;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  width: 100%;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 42px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  position: relative;
+  z-index: 20;
+}
+
+
+/* LEFT */
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  white-space: nowrap;
+
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+
+  color: #f4efe6;
+}
+
+.navbar-left b {
+  font-weight: 400;
+  color: #f4efe6;
+}
+
+.brand-name {
+  color: #ff3030;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+
+/* RIGHT */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+.navbar-right > span {
+  color: #8c8982;
+}
+
+
+/* NAV LINKS */
+
+.navbar-right a {
+  position: relative;
+
+  color: #aaa69f;
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.navbar-right a:hover {
+  color: #f4efe6;
+}
+
+
+/* REQUEST ACCESS */
+
+.nav-access {
+  height: 42px;
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: transparent;
+
+  border: 1px solid rgba(255, 48, 48, 0.65);
+  border-radius: 5px;
+
+  color: #ff3030;
+
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.nav-access:hover {
+  background: rgba(255, 48, 48, 0.08);
+  border-color: #ff3030;
+}
+
+.nav-access i {
+  width: 6px;
+  height: 6px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ff3030;
+
+  box-shadow: 0 0 10px rgba(255, 48, 48, 0.8);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.hero-main {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+
+  padding-top: 26px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 24px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+
+  color: #858078;
+
+  text-transform: uppercase;
+}
+
+.hero-kicker i {
+  width: 10px;
+  height: 10px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ff3035;
+
+  box-shadow:
+    0 0 10px rgba(255,48,53,0.75),
+    0 0 22px rgba(255,48,53,0.3);
+}
+
+.hero-kicker b {
+  color: #77736c;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   TWO COLUMN HERO
+   ========================================================= */
+
+.hero-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.86fr)
+    minmax(0, 1fr);
+
+  gap: 48px;
+
+  padding-right: 70px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.hero-left {
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.hero-title {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Handjet", sans-serif;
+
+  font-size: clamp(90px, 7.5vw, 125px);
+
+  font-weight: 700;
+
+  line-height: 0.76;
+
+  letter-spacing: -0.035em;
+
+  color: #f4eee3;
+
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hero-description {
+  max-width: 610px;
+
+  margin-top: 26px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 12px;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.025em;
+
+  color: #c7c1b6;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 22px;
+}
+
+.primary-btn,
+.secondary-btn {
+  height: 46px;
+
+  padding: 0 27px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primary-btn {
+  border: 1px solid #f4eee3;
+
+  background: #f4eee3;
+
+  color: #050505;
+}
+
+.primary-btn:hover {
+  border-color: #ff3035;
+
+  background: #ff3035;
+
+  color: white;
+}
+
+.primary-btn span {
+  margin-left: 8px;
+}
+
+.secondary-btn {
+  border: 1px solid rgba(255,255,255,0.28);
+
+  background: transparent;
+
+  color: #f4eee3;
+}
+
+.secondary-btn:hover {
+  border-color: #ff3035;
+
+  color: #ff3035;
+}
+
+.secondary-btn span {
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.hero-right {
+  min-width: 0;
+  width: 100%;
+  position: relative;
+}
+
+.panel-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 10px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: #77736d;
+
+  position: relative;
+  z-index: 5;
+}
+
+.panel-label b {
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   RECOVERY PANEL
+   ========================================================= */
+
+.recovery-panel {
+  width: 100%;
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  background: rgba(5,5,5,0.78);
+
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.panel-header {
+  height: 46px;
+
+  padding: 0 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: #8d8981;
+}
+
+.monitoring {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.monitoring i {
+  width: 8px;
+  height: 8px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ff3035;
+
+  box-shadow:
+    0 0 10px rgba(255,48,53,0.7);
+}
+
+
+/* =========================================================
+   RECOVERY STEPS
+   ========================================================= */
+
+.recovery-step {
+  position: relative;
+
+  min-height: 82px;
+
+  display: grid;
+
+  grid-template-columns:
+    55px
+    minmax(0, 1fr)
+    60px;
+
+  align-items: center;
+
+  padding: 11px 24px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.recovery-step.failed {
+  background: rgba(85,0,0,0.28);
+}
+
+.recovery-step.recovered {
+  background: rgba(0,55,38,0.25);
+}
+
+.step-number {
+  align-self: start;
+
+  padding-top: 5px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  color: #69645d;
+}
+
+.step-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.step-label {
+  margin-bottom: 5px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  color: #858078;
+}
+
+.step-content strong {
+  font-family: "DM Mono", monospace;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  color: #f4eee3;
+}
+
+.step-content small {
+  margin-top: 4px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+
+  color: #6f6b65;
+}
+
+.step-icon {
+  width: 42px;
+  height: 42px;
+
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 15px;
+
+  color: #858078;
+}
+
+.step-icon.danger {
+  border-color: rgba(255,48,53,0.7);
+  color: #ff3035;
+}
+
+.step-icon.action {
+  border-color: rgba(255,48,53,0.7);
+  color: #ff3035;
+}
+
+.step-icon.success {
+  border-color: rgba(0,255,140,0.65);
+  color: #00d878;
+}
+
+
+/* =========================================================
+   PANEL STATS
+   ========================================================= */
+
+.panel-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  min-height: 52px;
+}
+
+.panel-stat {
+  padding: 12px 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+
+.panel-stat:last-child {
+  border-right: none;
+}
+
+.panel-stat span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  color: #6e6962;
+}
+
+.panel-stat strong {
+  margin-top: 5px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  color: #f4eee3;
+}
+
+/* =========================================================
+   FLOATING CURRENCY BACKGROUND
+   ========================================================= */
+
+.currency-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  opacity: 1;
+}
+
+
+/* ================= CURRENCY SYMBOLS ================= */
+
+.currency {
+  position: absolute;
+
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+
+  color: rgba(255, 190, 70, 0.12);
+
+  user-select: none;
+
+  text-shadow:
+    0 0 25px rgba(255, 170, 40, 0.10),
+    0 0 55px rgba(255, 120, 20, 0.05);
+
+  filter: blur(0.25px);
+
+  pointer-events: none;
+
+  animation:
+    currencyFloat 8s ease-in-out infinite;
+}
+
+
+/* ================= POSITIONS ================= */
+
+.currency-one {
+  left: 3%;
+  top: 8%;
+
+  font-size: 125px;
+
+  color: rgba(255, 185, 55, 0.10);
+
+  animation-delay: 0s;
+}
+
+
+.currency-two {
+  left: 38%;
+  top: 5%;
+
+  font-size: 105px;
+
+  color: rgba(255, 145, 40, 0.085);
+
+  animation-delay: 1.5s;
+}
+
+
+.currency-three {
+  left: 52%;
+  top: 17%;
+
+  font-size: 150px;
+
+  color: rgba(255, 190, 55, 0.08);
+
+  animation-delay: 3s;
+}
+
+
+.currency-four {
+  right: 4%;
+  top: 10%;
+
+  font-size: 115px;
+
+  color: rgba(255, 160, 45, 0.10);
+
+  animation-delay: 2s;
+}
+
+
+.currency-five {
+  left: 22%;
+  top: 42%;
+
+  font-size: 135px;
+
+  color: rgba(255, 190, 55, 0.085);
+
+  animation-delay: 4s;
+}
+
+
+.currency-six {
+  left: 4%;
+  top: 62%;
+
+  font-size: 100px;
+
+  color: rgba(255, 120, 35, 0.08);
+
+  animation-delay: 2.5s;
+}
+
+
+.currency-seven {
+  left: 45%;
+  top: 62%;
+
+  font-size: 145px;
+
+  color: rgba(255, 185, 50, 0.07);
+
+  animation-delay: 5s;
+}
+
+
+.currency-eight {
+  right: 18%;
+  top: 55%;
+
+  font-size: 125px;
+
+  color: rgba(255, 145, 35, 0.09);
+
+  animation-delay: 1s;
+}
+
+
+.currency-nine {
+  right: 3%;
+  top: 72%;
+
+  font-size: 105px;
+
+  color: rgba(255, 190, 55, 0.08);
+
+  animation-delay: 3.5s;
+}
+
+
+.currency-ten {
+  left: 30%;
+  top: 78%;
+
+  font-size: 115px;
+
+  color: rgba(255, 120, 35, 0.07);
+
+  animation-delay: 6s;
+}
+
+
+.currency-eleven {
+  right: 35%;
+  top: 34%;
+
+  font-size: 85px;
+
+  color: rgba(255, 200, 70, 0.06);
+
+  animation-delay: 4.5s;
+}
+
+
+.currency-twelve {
+  right: 8%;
+  top: 40%;
+
+  font-size: 95px;
+
+  color: rgba(255, 150, 40, 0.07);
+
+  animation-delay: 5.5s;
+}
+
+
+/* ================= FLOATING MOTION ================= */
+
+@keyframes currencyFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(2deg);
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA FLOATING CURRENCIES
+   ========================================================= */
+
+.currency-extra-one {
+  position: absolute;
+
+  left: 15%;
+  top: 52%;
+
+  font-size: 145px;
+
+  color: rgba(255, 180, 60, 0.045);
+
+  animation:
+    currencyFloatLarge 11s ease-in-out infinite;
+}
+
+.currency-extra-two {
+  position: absolute;
+
+  left: 53%;
+  top: 65%;
+
+  font-size: 125px;
+
+  color: rgba(255, 180, 60, 0.04);
+
+  animation:
+    currencyFloat 10s ease-in-out infinite reverse;
+}
+
+.currency-extra-three {
+  position: absolute;
+
+  right: 24%;
+  top: 5%;
+
+  font-size: 110px;
+
+  color: rgba(255, 180, 60, 0.035);
+
+  animation:
+    currencyFloatLarge 12s ease-in-out infinite;
+}
+
+.currency-extra-four {
+  position: absolute;
+
+  right: 7%;
+  bottom: 7%;
+
+  font-size: 135px;
+
+  color: rgba(255, 180, 60, 0.045);
+
+  animation:
+    currencyFloat 10s ease-in-out infinite reverse;
+}
+
+
+/* =========================================================
+   CURRENCY ANIMATION
+   ========================================================= */
+
+@keyframes currencyFloat {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -18px, 0)
+      rotate(2deg);
+  }
+}
+
+
+@keyframes currencyFloatLarge {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-2deg);
+
+    opacity: 0.45;
+  }
+
+  50% {
+    transform:
+      translate3d(10px, -25px, 0)
+      rotate(2deg);
+
+    opacity: 0.75;
+  }
+}
+
+
+/* =========================================================
+   FAINT DATA GRID
+   ========================================================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 48, 48, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 48, 48, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at 65% 45%,
+      black 0%,
+      transparent 72%
+    );
+}
+
+
+/* =========================================================
+   RED DATA PARTICLES
+   ========================================================= */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: 18%;
+  top: 18%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 48, 48, 0.35) 1px,
+      transparent 1.5px
+    );
+
+  background-size: 18px 18px;
+
+  opacity: 0.18;
+
+  mask-image:
+    radial-gradient(
+      circle,
+      black 0%,
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   RED SYSTEM GLOW
+   ========================================================= */
+
+.hero-right::before {
+  content: "";
+
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  right: 5%;
+  top: 5%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 48, 48, 0.055),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   SYSTEM SCAN LINE
+   ========================================================= */
+
+.hero-right::after {
+  content: "";
+
+  position: absolute;
+
+  width: 55%;
+  height: 1px;
+
+  right: 3%;
+  top: 48%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 48, 48, 0.35),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(255, 48, 48, 0.2);
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   BOTTOM DATA
+   ========================================================= */
+
+.hero-data {
+  position: relative;
+
+  z-index: 10;
+
+  width: calc(100% - 70px);
+
+  margin-top: 20px;
+
+  padding: 15px 28px;
+
+  border: 1px solid rgba(255, 48, 48, 0.35);
+
+  border-radius: 8px;
+
+  background: rgba(5, 5, 5, 0.72);
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  backdrop-filter: blur(8px);
+}
+
+.hero-data-item {
+  min-height: 62px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 0 32px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-data-item:first-child {
+  padding-left: 10px;
+}
+
+.hero-data-item:last-child {
+  border-right: none;
+}
+
+.hero-data-item:nth-child(2) {
+  align-items: center;
+}
+
+.hero-data-item:nth-child(3) {
+  align-items: flex-end;
+}
+
+.hero-data-label {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.16em;
+
+  color: #8b867e;
+
+  white-space: nowrap;
+}
+
+.hero-data-value {
+  margin-top: 7px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #f4eee3;
+}
+
+.hero-data-change {
+  margin-top: 8px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+.hero-data-change span {
+  color: #77736c;
+
+  margin-left: 5px;
+}
+
+.hero-data-change.negative {
+  color: #ff3035;
+}
+
+.hero-data-change.positive {
+  color: #69d95c;
+}
+
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #777;
+  z-index: 10;
+}
+
+
+/* =========================================================
+   AUREX AI BACKGROUND VISUALIZATION
+   ========================================================= */
+
+.ai-visual {
+  position: absolute;
+
+  top: 110px;
+  right: 40px;
+
+  width: 58%;
+  height: 610px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  opacity: 0.72;
+}
+
+
+/* TRANSACTION DATA */
+
+.ai-transaction {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  font-family: "DM Mono", monospace;
+
+  letter-spacing: 0.08em;
+}
+
+.ai-transaction span {
+  font-size: 13px;
+  color: #f4eee3;
+}
+
+.ai-transaction small {
+  font-size: 8px;
+
+  color: #ff3035;
+
+  letter-spacing: 0.12em;
+}
+
+.ai-visual .transaction-one {
+  top: 65px;
+  left: 3%;
+}
+
+.ai-visual .transaction-two {
+  top: 180px;
+  left: 3%;
+}
+
+.ai-visual .transaction-three {
+  top: 300px;
+  left: 3%;
+}
+
+
+/* =========================================================
+   AI NODES
+   ========================================================= */
+
+.ai-node {
+  position: absolute;
+
+  width: 280px;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 0 22px;
+
+  background: rgba(5, 5, 5, 0.82);
+
+  border: 1px solid rgba(255,255,255,0.22);
+
+  border-radius: 8px;
+
+  backdrop-filter: blur(6px);
+
+  font-family: "DM Mono", monospace;
+}
+
+.ai-node strong {
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.05em;
+
+  color: #f4eee3;
+}
+
+.ai-node span {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+  color: #ff3035;
+}
+
+.node-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ff3035;
+
+  border-radius: 50%;
+
+  color: #ff3035;
+
+  font-size: 18px;
+}
+
+
+/* NODE POSITIONS */
+
+.node-failed {
+  top: 45px;
+  left: 42%;
+
+  border-color: rgba(255,48,53,0.7);
+}
+
+.node-analysis {
+  top: 155px;
+  left: 42%;
+
+  border-color: rgba(244,238,227,0.55);
+
+  animation: aurex-pulse 2.5s ease-in-out infinite;
+}
+
+.node-action {
+  top: 265px;
+  left: 42%;
+
+  border-color: rgba(255,48,53,0.55);
+}
+
+.node-recovered {
+  top: 375px;
+  left: 42%;
+
+  border-color: rgba(255,48,53,0.7);
+}
+
+
+/* NODE ANIMATION */
+
+@keyframes aurex-pulse {
+
+  0% {
+    box-shadow: 0 0 0 rgba(255,48,53,0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px rgba(255,48,53,0.12),
+      inset 0 0 20px rgba(255,48,53,0.03);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(255,48,53,0);
+  }
+}
+
+
+/* =========================================================
+   CONNECTION LINES
+   ========================================================= */
+
+.ai-line {
+  position: absolute;
+
+  width: 150px;
+  height: 1px;
+
+  background: #ff3035;
+
+  opacity: 0.5;
+
+  transform-origin: left center;
+
+  box-shadow:
+    0 0 5px rgba(255,48,53,0.5);
+}
+
+.ai-line.line-one {
+  top: 105px;
+  left: 17%;
+
+  width: 25%;
+
+  transform: rotate(8deg);
+
+  border-top: 1px dashed #ff3035;
+
+  background: none;
+}
+
+.ai-line.line-two {
+  top: 220px;
+  left: 17%;
+
+  width: 25%;
+
+  transform: rotate(5deg);
+
+  border-top: 1px dashed #ff3035;
+
+  background: none;
+}
+
+.ai-line.line-three {
+  top: 340px;
+  left: 17%;
+
+  width: 25%;
+
+  transform: rotate(-3deg);
+
+  border-top: 1px dashed #ff3035;
+
+  background: none;
+}
+
+.ai-line.line-four {
+  top: 415px;
+  left: 70%;
+
+  width: 20%;
+
+  border-top: 1px dashed #ff3035;
+
+  background: none;
+}
+
+
+/* =========================================================
+   RECOVERED VALUE
+   ========================================================= */
+
+.ai-recovered-value {
+  position: absolute;
+
+  top: 410px;
+  right: 1%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  font-family: "DM Mono", monospace;
+}
+
+.ai-recovered-value strong {
+  font-size: 19px;
+
+  font-weight: 400;
+
+  color: #f4eee3;
+}
+
+.ai-recovered-value span {
+  font-size: 10px;
+
+  color: #69d95c;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.ai-progress {
+  position: absolute;
+
+  bottom: 25px;
+  left: 37%;
+
+  width: 300px;
+
+  padding: 17px 18px;
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  border-radius: 7px;
+
+  background: rgba(5,5,5,0.7);
+
+  font-family: "DM Mono", monospace;
+}
+
+.ai-progress > span {
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+  color: #d7d0c5;
+}
+
+.progress-track {
+  width: 100%;
+  height: 3px;
+
+  margin-top: 14px;
+
+  background: rgba(255,255,255,0.08);
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 72%;
+  height: 100%;
+
+  background: #ff3035;
+
+  box-shadow:
+    0 0 8px rgba(255,48,53,0.8);
+
+  animation:
+    recovery-progress 3s ease-in-out infinite alternate;
+}
+
+@keyframes recovery-progress {
+
+  from {
+    width: 35%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+
+/* =========================================================
+   SMALL DATA PARTICLES
+   ========================================================= */
+
+.ai-visual::before,
+.ai-visual::after {
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #ff3035;
+
+  box-shadow:
+    80px 40px #ff3035,
+    170px 90px #ff3035,
+    280px 20px #ff3035,
+    360px 130px #ff3035,
+    450px 70px #ff3035,
+    520px 190px #ff3035,
+    620px 110px #ff3035,
+    700px 240px #ff3035,
+    260px 330px #ff3035,
+    560px 370px #ff3035;
+
+  opacity: 0.5;
+
+  animation:
+    particle-blink 2s ease-in-out infinite alternate;
+}
+
+.ai-visual::after {
+  top: 40px;
+  left: 50px;
+
+  animation-delay: 1s;
+}
+
+@keyframes particle-blink {
+
+  from {
+    opacity: 0.15;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+
+
+/* =========================================================
+   DATA FLOW
+   ========================================================= */
+
+.ai-data-flow {
+  position: absolute;
+
+  top: -40px;
+  left: -100px;
+
+  width: calc(100% + 200px);
+  height: 620px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  overflow: visible;
+}
+
+.flow-transaction {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  font-family: "DM Mono", monospace;
+
+  opacity: 0.7;
+
+  animation: aurexFloat 4s ease-in-out infinite;
+}
+
+.flow-transaction strong {
+  font-size: 12px;
+
+  font-weight: 400;
+
+  color: #f4eee3;
+}
+
+.flow-transaction span {
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  color: #ff3035;
+}
+
+.ai-data-flow .transaction-one {
+  left: 2%;
+  top: 14%;
+}
+
+.ai-data-flow .transaction-two {
+  left: 7%;
+  top: 46%;
+
+  animation-delay: 1.2s;
+}
+
+.ai-data-flow .transaction-three {
+  right: 2%;
+  top: 31%;
+
+  animation-delay: 2s;
+}
+
+
+/* FLOW LINES */
+
+.flow-line {
+  position: absolute;
+
+  height: 1px;
+
+  border-top: 1px dashed rgba(255, 48, 53, 0.55);
+
+  transform-origin: left center;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 48, 53, 0.4));
+
+  animation:
+    aurexLinePulse 2.5s ease-in-out infinite;
+}
+
+.flow-line.line-one {
+  width: 28%;
+
+  left: 14%;
+  top: 21%;
+
+  transform: rotate(7deg);
+}
+
+.flow-line.line-two {
+  width: 26%;
+
+  left: 17%;
+  top: 51%;
+
+  transform: rotate(-4deg);
+
+  animation-delay: 0.8s;
+}
+
+.flow-line.line-three {
+  width: 22%;
+
+  right: 13%;
+  top: 38%;
+
+  transform: rotate(-10deg);
+
+  animation-delay: 1.4s;
+}
+
+
+/* FLOW DOTS */
+
+.flow-dot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #ff3035;
+
+  box-shadow:
+    0 0 6px rgba(255, 48, 53, 1),
+    0 0 18px rgba(255, 48, 53, 0.5);
+
+  animation:
+    aurexDotPulse 1.8s ease-in-out infinite;
+}
+
+.dot-one {
+  left: 40%;
+  top: 21%;
+}
+
+.dot-two {
+  left: 36%;
+  top: 51%;
+
+  animation-delay: 0.6s;
+}
+
+.dot-three {
+  right: 24%;
+  top: 37%;
+
+  animation-delay: 1.2s;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes aurexFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes aurexLinePulse {
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes aurexDotPulse {
+
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   KEEP BOX ON TOP
+   ========================================================= */
+
+.panel-label,
+.recovery-panel {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1500px) {
+
+  .hero {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .hero-grid {
+    gap: 40px;
+    padding-right: 62px;
+  }
+
+  .hero-title {
+    font-size: clamp(85px, 8.3vw, 140px);
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .recovery-step {
+    min-height: 96px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+
+  .hero {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .hero-grid {
+    grid-template-columns:
+      minmax(0, 0.82fr)
+      minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding-right: 55px;
+  }
+
+  .hero-title {
+    font-size: clamp(76px, 8.2vw, 115px);
+  }
+
+  .hero-description {
+    margin-top: 28px;
+    font-size: 11px;
+  }
+
+  .hero-buttons {
+    margin-top: 24px;
+  }
+
+  .recovery-step {
+    min-height: 90px;
+
+    grid-template-columns:
+      42px
+      minmax(0, 1fr)
+      50px;
+
+    padding: 13px 18px;
+  }
+
+  .step-content strong {
+    font-size: 17px;
+  }
+
+  .step-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .ai-visual {
+    width: 55%;
+    right: 20px;
+    opacity: 0.45;
+  }
+
+  .ai-node {
+    width: 240px;
+  }
+}
+
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 28px;
+  }
+
+  .navbar-right {
+    gap: 22px;
+  }
+
+  .navbar-left {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 0 24px;
+  }
+
+  .navbar {
+    height: 64px;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+
+  .navbar-right a {
+    display: none;
+  }
+
+  .hero-main {
+    padding-top: 30px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 30px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+
+    padding-right: 35px;
+  }
+
+  .hero-title {
+    font-size: clamp(90px, 17vw, 145px);
+  }
+
+  .hero-right {
+    margin-top: 30px;
+  }
+
+  .hero-data {
+    width: calc(100% - 35px);
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    padding: 10px 18px;
+  }
+
+  .hero-data-item,
+  .hero-data-item:first-child {
+    padding: 18px 10px;
+
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .hero-data-item:last-child {
+    border-bottom: none;
+  }
+
+  .hero-data-item:nth-child(2),
+  .hero-data-item:nth-child(3) {
+    align-items: flex-start;
+  }
+
+  .ai-visual,
+  .ai-data-flow {
+    display: none;
+  }
+}
+
+
+@media (max-width: 850px) {
+
+  .navbar-right a {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 0 18px;
+  }
+
+  .navbar-left span:last-child {
+    display: none;
+  }
+
+  .hero-kicker {
+    font-size: 9px;
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 24vw;
+  }
+
+  .hero-description {
+    font-size: 10px;
+    line-height: 1.9;
+  }
+
+  .hero-description br {
+    display: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .recovery-step {
+    grid-template-columns:
+      32px
+      minmax(0, 1fr)
+      42px;
+  }
+
+  .step-content small {
+    font-size: 7px;
+  }
+
+  .panel-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-stat {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .currency {
+    opacity: 0.65;
+  }
+
+  .currency-one {
+    font-size: 100px;
+  }
+
+  .currency-two {
+    font-size: 120px;
+  }
+
+  .currency-three {
+    font-size: 130px;
+  }
+}
+/* =========================================================
+   AUREX CURRENCY BACKGROUND — RED VERSION
+   ========================================================= */
+
+.currency-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  opacity: 1;
+}
+
+.currency {
+  position: absolute;
+
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+
+  color: rgba(255, 48, 48, 0.10);
+
+  line-height: 1;
+
+  user-select: none;
+  pointer-events: none;
+
+  text-shadow:
+    0 0 25px rgba(255, 48, 48, 0.06);
+
+  filter: blur(0.15px);
+
+  /* NO FLOATING */
+  animation: none !important;
+  transform: none;
+}
+
+
+/* ================= TOP ================= */
+
+.currency-one {
+  top: 6%;
+  right: 25%;
+  font-size: 125px;
+  color: rgba(255, 48, 48, 0.13);
+}
+
+.currency-two {
+  top: 15%;
+  right: 4%;
+  font-size: 105px;
+  color: rgba(255, 48, 48, 0.09);
+}
+
+.currency-three {
+  top: 27%;
+  right: 15%;
+  font-size: 145px;
+  color: rgba(255, 48, 48, 0.08);
+}
+
+
+/* ================= RIGHT ================= */
+
+.currency-four {
+  top: 34%;
+  right: 3%;
+  font-size: 135px;
+  color: rgba(255, 48, 48, 0.12);
+}
+
+.currency-five {
+  top: 52%;
+  right: 22%;
+  font-size: 115px;
+  color: rgba(255, 48, 48, 0.08);
+}
+
+.currency-six {
+  top: 60%;
+  right: 5%;
+  font-size: 105px;
+  color: rgba(255, 48, 48, 0.11);
+}
+
+
+/* ================= LOWER AREA ================= */
+
+.currency-seven {
+  bottom: 4%;
+  right: 35%;
+  font-size: 130px;
+  color: rgba(255, 48, 48, 0.09);
+}
+
+.currency-eight {
+  bottom: 9%;
+  right: 8%;
+  font-size: 125px;
+  color: rgba(255, 48, 48, 0.12);
+}
+
+.currency-nine {
+  bottom: 24%;
+  right: 43%;
+  font-size: 100px;
+  color: rgba(255, 48, 48, 0.07);
+}
+
+
+/* ================= EXTRA DEPTH ================= */
+
+.currency-ten {
+  top: 8%;
+  right: 46%;
+  font-size: 90px;
+  color: rgba(255, 48, 48, 0.07);
+}
+
+.currency-eleven {
+  bottom: 5%;
+  right: 52%;
+  font-size: 115px;
+  color: rgba(255, 48, 48, 0.08);
+}
+
+.currency-twelve {
+  top: 40%;
+  right: 38%;
+  font-size: 85px;
+  color: rgba(255, 48, 48, 0.06);
+}
+
+
+/* =========================================================
+   KEEP LEFT TITLE CLEAN
+   ========================================================= */
+
+.currency-background {
+  clip-path: inset(0 0 0 32%);
+}
+
+
+/* =========================================================
+   KEEP MAIN UI ABOVE CURRENCIES
+   ========================================================= */
+
+.navbar {
+  position: relative;
+  z-index: 20;
+}
+
+.hero-main {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-data {
+  position: relative;
+  z-index: 10;
+}
+
+.panel-label,
+.recovery-panel {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .currency-background {
+    opacity: 0.4;
+    clip-path: none;
+  }
+
+  .currency {
+    font-size: 80px !important;
+  }
+}
+/* =========================================================
+   AUREX CONTROL ROOM
+   ========================================================= */
+
+.control-room {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 110px 46px 80px;
+
+  background: #050505;
+
+  border-top: 1px solid rgba(255,255,255,0.12);
+
+  overflow: hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+.control-header {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 55px;
+}
+
+.control-kicker {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: #ff3035;
+}
+
+.control-header h2 {
+  font-family: "Handjet", sans-serif;
+
+  font-size: clamp(55px, 6vw, 95px);
+
+  font-weight: 600;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.02em;
+
+  color: #f4eee3;
+}
+
+
+
+.control-header p {
+  margin-top: 18px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 0.03em;
+
+  color: #77736c;
+}
+
+
+/* ================= SYSTEM STATUS ================= */
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 16px;
+
+  border: 1px solid rgba(255,48,53,0.35);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+
+  color: #aaa69f;
+}
+
+.system-status i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ff3035;
+
+  box-shadow:
+    0 0 8px rgba(255,48,53,0.9);
+
+  animation: control-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes control-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* ================= MAIN GRID ================= */
+
+.control-grid {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.1fr 1fr;
+
+  gap: 16px;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+}
+
+
+/* ================= COMMON CARDS ================= */
+
+.payment-card,
+.ai-engine,
+.decision-card {
+  min-height: 330px;
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  background: rgba(8,8,8,0.78);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* ================= CARD TOP ================= */
+
+.card-top {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.14em;
+
+  color: #77736c;
+}
+
+
+/* ================= PAYMENT CARD ================= */
+
+.payment-card {
+  position: relative;
+
+  padding-bottom: 25px;
+}
+
+.payment-amount {
+  margin: 42px 24px 10px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 38px;
+
+  font-weight: 300;
+
+  color: #f4eee3;
+}
+
+.payment-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 0 24px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 0.12em;
+
+  color: #ff3035;
+}
+
+.payment-status i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ff3035;
+
+  box-shadow: 0 0 8px rgba(255,48,53,0.7);
+}
+
+.payment-details {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  margin: 48px 24px 0;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.payment-details div {
+  padding-top: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.payment-details span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  color: #66615b;
+}
+
+.payment-details strong {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  color: #c7c1b6;
+}
+
+
+/* ================= AI ENGINE ================= */
+
+.ai-engine {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.engine-label {
+  align-self: stretch;
+
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 20px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.14em;
+
+  color: #ff3035;
+}
+
+.engine-core {
+  margin-top: 52px;
+
+  width: 115px;
+  height: 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,48,53,0.5);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 35px rgba(255,48,53,0.08),
+    inset 0 0 30px rgba(255,48,53,0.05);
+
+  animation: core-pulse 2.5s ease-in-out infinite;
+}
+
+.core-ring {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ff3035;
+
+  border-radius: 50%;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 17px;
+
+  color: #ff3035;
+
+  box-shadow:
+    0 0 18px rgba(255,48,53,0.25);
+}
+
+@keyframes core-pulse {
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.engine-status {
+  margin-top: 25px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: #f4eee3;
+}
+
+.engine-signals {
+  margin-top: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+
+  color: #69645d;
+}
+
+
+/* ================= DECISION ================= */
+
+.decision-card {
+  position: relative;
+
+  padding-bottom: 25px;
+}
+
+.confidence {
+  margin: 35px 24px 5px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 38px;
+
+  font-weight: 300;
+
+  color: #f4eee3;
+}
+
+.decision-action {
+  margin: 0 24px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 13px;
+
+  letter-spacing: 0.14em;
+
+  color: #ff3035;
+}
+
+.decision-card p {
+  margin: 22px 24px;
+
+  max-width: 330px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  line-height: 1.8;
+
+  color: #77736c;
+}
+
+.execute-btn {
+  height: 43px;
+
+  margin: 10px 24px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(255,48,53,0.65);
+
+  background: rgba(255,48,53,0.05);
+
+  color: #ff3035;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.execute-btn:hover {
+  background: #ff3035;
+
+  color: #050505;
+}
+
+
+/* ================= PIPELINE ================= */
+
+.recovery-pipeline {
+  position: relative;
+  z-index: 5;
+
+  max-width: 1450px;
+
+  margin: 30px auto 0;
+
+  padding: 22px 25px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(255,255,255,0.13);
+
+  background: rgba(8,8,8,0.72);
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 130px;
+}
+
+.pipeline-step span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  color: #55514c;
+}
+
+.pipeline-step strong {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+
+  color: #aaa69f;
+}
+
+.pipeline-step small {
+  font-family: "DM Mono", monospace;
+
+  font-size: 7px;
+
+  color: #55514c;
+}
+
+.pipeline-step.active strong {
+  color: #f4eee3;
+}
+
+.pipeline-step.recovered strong {
+  color: #69d95c;
+}
+
+.pipeline-line {
+  flex: 1;
+
+  height: 1px;
+
+  margin: 0 18px;
+
+  border-top: 1px dashed rgba(255,48,53,0.45);
+}
+
+
+/* ================= SUMMARY ================= */
+
+.control-summary {
+  position: relative;
+  z-index: 5;
+
+  max-width: 1450px;
+
+  margin: 18px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  border: 1px solid rgba(255,255,255,0.13);
+
+  background: rgba(8,8,8,0.7);
+}
+
+.control-summary div {
+  min-height: 85px;
+
+  padding: 18px 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.control-summary div:last-child {
+  border-right: none;
+}
+
+.control-summary span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  color: #66615b;
+}
+
+.control-summary strong {
+  margin-top: 8px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 20px;
+
+  font-weight: 300;
+
+  color: #f4eee3;
+}
+
+
+/* ================= BACKGROUND GRID ================= */
+
+.control-room::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255,48,48,0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,48,48,0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black,
+      transparent 75%
+    );
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+  .control-room {
+    padding: 80px 28px;
+  }
+
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .recovery-pipeline {
+    overflow-x: auto;
+  }
+
+  .control-summary {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .control-room {
+    padding: 70px 18px;
+  }
+
+  .control-header h2 {
+    font-size: 55px;
+  }
+
+  .control-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .control-summary div {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+}
+/* =========================================================
+   LIVE TRANSACTION — PREMIUM DETAILS
+   ========================================================= */
+
+.payment-reason {
+  margin-top: 8px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+
+  color: #8f8980;
+}
+
+.payment-detected {
+  margin-top: 24px;
+  padding-top: 14px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  font-family: "DM Mono", monospace;
+}
+
+.payment-detected span {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: #66615b;
+}
+
+.payment-detected strong {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+
+  color: #ff3035;
+}
+
+.risk-high {
+  color: #ff3035 !important;
+}
+/* =========================================================
+   CONTROL ROOM — ALIGNMENT + READABILITY
+   ========================================================= */
+
+.control-grid {
+  align-items: stretch;
+}
+
+/* Make all three cards the same height */
+.payment-card,
+.ai-engine,
+.decision-card {
+  min-height: 430px;
+  box-sizing: border-box;
+}
+
+/* ---------- LIVE TRANSACTION ---------- */
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-card .card-top {
+  min-height: 58px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.payment-amount {
+  margin-top: 48px;
+  padding: 0 30px;
+
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+.payment-status {
+  margin-top: 20px;
+  padding: 0 30px;
+
+  font-size: 13px;
+  letter-spacing: 0.16em;
+}
+
+.payment-reason {
+  margin-top: 10px;
+  padding: 0 30px;
+
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.payment-details {
+  margin: 42px 30px 0;
+  padding-top: 22px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.payment-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-details span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #777;
+}
+
+.payment-details strong {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.payment-detected {
+  margin-top: auto;
+  padding: 18px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.payment-detected span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.payment-detected strong {
+  font-size: 11px;
+}
+
+
+/* ---------- AI ENGINE ---------- */
+
+.engine-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.engine-status {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  margin-top: 28px;
+}
+
+.engine-signals {
+  margin-top: 22px;
+}
+
+.engine-signals span {
+  font-size: 10px;
+  margin: 8px 0;
+}
+
+
+/* ---------- AI DECISION ---------- */
+
+.decision-card .card-top {
+  min-height: 58px;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confidence {
+  padding: 48px 30px 0;
+
+  font-size: 38px;
+  line-height: 1;
+}
+
+.decision-action {
+  margin: 22px 30px 0;
+
+  font-size: 14px;
+  letter-spacing: 0.16em;
+}
+
+.decision-card p {
+  margin: 26px 30px;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.execute-btn {
+  margin-left: 30px;
+  margin-top: 10px;
+
+  font-size: 11px;
+  padding: 16px 24px;
+}
+/* =========================================================
+   RECOVERY SUCCESS BUTTON
+   ========================================================= */
+
+.execute-btn:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.execute-btn:has(+ *) {
+  transition: all 0.3s ease;
+}
+.execute-btn.recovery-success {
+  border-color: #00d878;
+  background: rgba(0, 216, 120, 0.08);
+  color: #00d878;
+
+  box-shadow:
+    0 0 14px rgba(0, 216, 120, 0.12);
+}
+
+.execute-btn.recovery-success:hover {
+  border-color: #00d878;
+  background: rgba(0, 216, 120, 0.12);
+  color: #00d878;
+}
+.payment-status.status-recovered {
+  color: #00d878;
+}
+
+.payment-status.status-recovered i {
+  background: #00d878;
+
+  box-shadow:
+    0 0 8px rgba(0, 216, 120, 0.8),
+    0 0 16px rgba(0, 216, 120, 0.35);
+}
+.pipeline-step.recovered.active {
+  border-color: #00d878;
+  color: #00d878;
+
+  background: rgba(0, 216, 120, 0.06);
+
+  box-shadow:
+    0 0 18px rgba(0, 216, 120, 0.08);
+}
+
+.pipeline-step.recovered.active strong {
+  color: #00d878;
+}
+
+.pipeline-step.recovered.active span {
+  color: #00d878;
+}
+
+.pipeline-step.recovered.active small {
+  color: rgba(0, 216, 120, 0.65);
+}
+/* =========================================================
+   RECOVERED REVENUE SUCCESS STATE
+   ========================================================= */
+
+.revenue-recovered {
+  color: #00d878 !important;
+
+  text-shadow:
+    0 0 12px rgba(0, 216, 120, 0.25);
+
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease;
+}
+/* =========================================================
+   AI ENGINE — RECOVERY STATES
+   ========================================================= */
+
+.engine-status {
+  transition:
+    color 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+.engine-status.engine-executing {
+  color: #ff3035;
+
+  text-shadow:
+    0 0 12px rgba(255, 48, 53, 0.25);
+}
+
+.engine-status.engine-success {
+  color: #00d878;
+
+  text-shadow:
+    0 0 14px rgba(0, 216, 120, 0.3);
+}
+
+/* =========================================================
+   AUREX — FORCE OUTER AI CORE CIRCLE GREEN
+   ========================================================= */
+
+/* Inner ring */
+.engine-core.core-success .core-ring {
+  border-color: #00d878 !important;
+  color: #00d878 !important;
+  box-shadow:
+    0 0 18px rgba(0, 216, 120, 0.45),
+    0 0 45px rgba(0, 216, 120, 0.18) !important;
+}
+
+/* Outer circle — pseudo element */
+.engine-core.core-success .core-ring::before,
+.engine-core.core-success .core-ring::after {
+  border-color: #00d878 !important;
+
+  box-shadow:
+    0 0 18px rgba(0, 216, 120, 0.35),
+    0 0 45px rgba(0, 216, 120, 0.15) !important;
+}
+
+/* Outer circle if it belongs to engine-core */
+.engine-core.core-success::before,
+.engine-core.core-success::after {
+  border-color: #00d878 !important;
+
+  box-shadow:
+    0 0 18px rgba(0, 216, 120, 0.35),
+    0 0 45px rgba(0, 216, 120, 0.15) !important;
+}
+/* =========================================================
+   AUREX — RECOVERY INTELLIGENCE
+   ========================================================= */
+
+.recovery-intelligence {
+  position: relative;
+  padding: 120px 7vw;
+  background: #050505;
+  color: #f5f5f0;
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.intelligence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 75px;
+}
+
+.intelligence-kicker {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #ff3035;
+}
+
+.intelligence-header h2 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+  font-weight: 700;
+}
+
+.intelligence-header p {
+  max-width: 520px;
+  margin: 25px 0 0;
+  color: #8f8f8f;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.intelligence-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 10px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.intelligence-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00d878;
+  box-shadow: 0 0 12px rgba(0,216,120,0.6);
+}
+
+/* FLOW */
+
+.intelligence-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+}
+
+/* CARDS */
+
+.intelligence-card {
+  position: relative;
+  flex: 1;
+  min-height: 370px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.025);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.intelligence-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,48,53,0.45);
+}
+
+.intelligence-number {
+  position: absolute;
+  top: 24px;
+  right: 25px;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+.intelligence-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #ff3035;
+  font-size: 14px;
+}
+
+.intelligence-label {
+  display: block;
+  margin-bottom: 13px;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.intelligence-card h3 {
+  margin: 0;
+  font-size: 27px;
+  line-height: 0.95;
+  letter-spacing: -1px;
+}
+
+.intelligence-card p {
+  margin: 22px 0 0;
+  color: #858585;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* META */
+
+.intelligence-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.intelligence-meta span,
+.intelligence-meta strong {
+  font-size: 10px;
+}
+
+.intelligence-meta span {
+  color: #666;
+}
+
+.intelligence-meta strong {
+  color: #f5f5f0;
+}
+
+/* SIGNALS */
+
+.signal-list {
+  margin-top: 28px;
+}
+
+.signal-list div {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.signal-list span,
+.signal-list strong {
+  font-size: 9px;
+}
+
+.signal-list span {
+  color: #666;
+}
+
+.signal-list strong {
+  color: #d8d8d2;
+}
+
+/* DECISION */
+
+.intelligence-card.decision {
+  border-color: rgba(255,48,53,0.35);
+}
+
+.recovery-probability {
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.recovery-probability span {
+  display: block;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.recovery-probability strong {
+  display: block;
+  margin-top: 8px;
+  color: #ff3035;
+  font-size: 32px;
+}
+
+/* CONNECTORS */
+
+.intelligence-connector {
+  align-self: center;
+  width: 55px;
+  text-align: center;
+  color: #555;
+  font-size: 18px;
+}
+
+.intelligence-connector span {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+}
+
+/* RECOVERED */
+
+.recovered-card {
+  border-color: rgba(0,216,120,0.3);
+}
+
+.recovered-card .intelligence-icon {
+  border-color: rgba(0,216,120,0.4);
+  color: #00d878;
+}
+
+.recovered-value {
+  margin-top: 35px;
+  color: #00d878;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* BOTTOM BAR */
+
+.decision-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 55px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.decision-bar > div {
+  padding: 23px 25px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.decision-bar > div:last-child {
+  border-right: none;
+}
+
+.decision-bar span {
+  display: block;
+  margin-bottom: 9px;
+  color: #666;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.decision-bar strong {
+  font-size: 15px;
+}
+
+.decision-result strong {
+  color: #00d878;
+}
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+
+  .intelligence-flow {
+    flex-direction: column;
+  }
+
+  .intelligence-connector {
+    width: auto;
+    transform: rotate(90deg);
+    margin: 5px 0;
+  }
+
+  .decision-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .recovery-intelligence {
+    padding: 80px 20px;
+  }
+
+  .intelligence-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intelligence-header h2 {
+    font-size: 52px;
+  }
+
+  .decision-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-bar > div {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+}
+/* =========================================================
+   AUREX — RECOVERY INTELLIGENCE TITLE
+   MATCH HERO TYPOGRAPHY
+   ========================================================= */
+
+.intelligence-header h2 {
+  font-family: "Handjet", sans-serif !important;
+  font-size: clamp(48px, 5vw, 75px) !important;
+  font-weight: 500 !important;
+  line-height: 0.85 !important;
+  letter-spacing: -0.02em !important;
+  color: #f4eee3 !important;
+  text-transform: uppercase;
+}
+/* =========================================================
+   AUREX — UNIFORM SECTION BACKGROUND
+   ========================================================= */
+
+.control-room,
+.recovery-intelligence {
+  background-color: #050505 !important;
+}
+/* =========================================================
+   AUREX — RECOVERY INTELLIGENCE GRID
+   ========================================================= */
+
+.recovery-intelligence {
+  background-color: #050505 !important;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size: 72px 72px;
+}
+/* =========================================================
+   AUREX — CONTROL ROOM GRID
+   ========================================================= */
+
+.control-room {
+  background-color: #050505 !important;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size: 72px 72px;
+}
+/* Move Recovery Intelligence content slightly upward */
+
+.recovery-intelligence {
+  padding-top: 70px !important;
+}
+/* =========================================================
+   RECOVERY INTELLIGENCE — TIGHTER FLOW
+   ========================================================= */
+
+.intelligence-header {
+  margin-bottom: 50px !important;
+}
+/* =========================================================
+   RECOVERY INTELLIGENCE — CARD POLISH
+   ========================================================= */
+
+.intelligence-card {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.intelligence-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 48, 53, 0.45);
+}
+
+/* Keep the recovered card green */
+
+.intelligence-card.recovered-card:hover {
+  border-color: rgba(0, 216, 120, 0.55);
+  background-color: rgba(0, 216, 120, 0.025);
+}
+/* =========================================================
+   RECOVERY INTELLIGENCE — METRICS BAR
+   ========================================================= */
+
+.decision-bar {
+  margin-top: 45px !important;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.decision-bar > div {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.decision-bar > div:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.decision-bar strong {
+  font-family: "DM Mono", monospace;
+  font-size: 17px;
+}
+
+.decision-result strong {
+  color: #00d878 !important;
+  text-shadow: 0 0 14px rgba(0, 216, 120, 0.2);
+}
+/* =========================================================
+   RECOVERY INTELLIGENCE — FINAL SPACING
+   ========================================================= */
+
+.recovery-intelligence {
+  padding-bottom: 90px !important;
+}
+
+.intelligence-flow {
+  margin-top: 0 !important;
+}
+
+.decision-bar {
+  margin-bottom: 0 !important;
+}
+/* =========================================================
+   AUREX CONTROL ROOM — PREMIUM ALIGNMENT FIX
+   ========================================================= */
+
+.control-room {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* MAIN 3-COLUMN GRID */
+.control-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* ALL THREE CARDS */
+.payment-card,
+.ai-engine,
+.decision-card {
+  min-width: 0;
+  width: 100%;
+  height: 540px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* =========================================================
+   LEFT PAYMENT CARD
+   ========================================================= */
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-card .payment-amount {
+  margin-top: 55px;
+}
+
+.payment-card .payment-status {
+  margin-top: 32px;
+}
+
+.payment-card .payment-reason {
+  margin-top: 12px;
+}
+
+.payment-card .payment-details {
+  margin-top: 52px;
+}
+
+.payment-card .payment-detected {
+  margin-top: auto;
+}
+
+
+/* =========================================================
+   CENTER AI ENGINE
+   ========================================================= */
+
+.ai-engine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.engine-label {
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.engine-core {
+  margin-top: 58px;
+  margin-bottom: 30px;
+}
+
+.engine-status {
+  margin-top: 0;
+}
+
+.engine-signals {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.ai-engine > div:last-child {
+  margin-top: auto !important;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+
+/* =========================================================
+   RIGHT DECISION CARD
+   ========================================================= */
+
+.decision-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.decision-card .card-top {
+  margin-left: -38px;
+  margin-right: -38px;
+}
+
+.decision-card .confidence {
+  margin-top: 52px;
+}
+
+.decision-card .decision-action {
+  margin-top: 22px;
+}
+
+.decision-card p {
+  max-width: 420px;
+  line-height: 1.8;
+  margin-top: 26px;
+}
+
+.decision-card .execute-btn {
+  margin-top: 42px;
+  align-self: flex-start;
+}
+
+.decision-card > div:last-child {
+  margin-top: 22px !important;
+}
+
+
+/* =========================================================
+   PIPELINE
+   ========================================================= */
+
+.recovery-pipeline {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 18px;
+}
+
+.pipeline-step {
+  min-width: 0;
+}
+
+.pipeline-step small {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.control-summary {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 18px;
+}
+
+.control-summary > div {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-card,
+  .ai-engine,
+  .decision-card {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .decision-card {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .decision-card .card-top {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .control-grid {
+    gap: 14px;
+  }
+
+  .payment-card,
+  .ai-engine,
+  .decision-card {
+    min-height: 450px;
+  }
+
+}
+/* =========================================
+   AUREX AI ENGINE — FINAL ALIGNMENT
+   ========================================= */
+
+.ai-engine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+/* ENGINE TITLE */
+.ai-engine .engine-label {
+  width: 100%;
+  text-align: left;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* AI CORE */
+.ai-engine .engine-core {
+  position: relative;
+  margin-top: 55px;
+  margin-bottom: 32px;
+  flex-shrink: 0;
+}
+
+/* SUCCESS / EXECUTING CORE */
+.ai-engine .engine-core.core-success,
+.ai-engine .engine-core.core-executing {
+  transform: none;
+}
+
+/* STATUS */
+.ai-engine .engine-status {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 34px 0;
+}
+
+/* SIGNALS */
+.ai-engine .engine-signals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  margin: 0;
+}
+
+/* INDIVIDUAL SIGNAL */
+.ai-engine .engine-signals span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* DIAGNOSIS */
+.ai-engine .engine-diagnosis {
+  width: 100%;
+  text-align: center;
+  margin-top: 38px;
+}
+
+/* KEEP EVERYTHING INSIDE THE CARD */
+.ai-engine > * {
+  flex-shrink: 0;
+}
+/* =========================================
+   AUREX — THREE CARD EQUAL HEIGHT FIX
+   ========================================= */
+
+.control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+}
+
+/* ALL THREE CARDS SAME HEIGHT */
+.payment-card,
+.ai-engine,
+.decision-card {
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* CENTER AI ENGINE */
+.ai-engine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* ENGINE HEADER */
+.ai-engine .engine-label {
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* AI CORE */
+.ai-engine .engine-core {
+  margin-top: 45px;
+  margin-bottom: 28px;
+  flex-shrink: 0;
+}
+
+/* ENGINE STATUS */
+.ai-engine .engine-status {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  flex-shrink: 0;
+}
+
+/* SIGNALS */
+.ai-engine .engine-signals {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+}
+
+/* SIGNAL TEXT */
+.ai-engine .engine-signals span {
+  width: 100%;
+  text-align: center;
+}
+
+/* DIAGNOSIS */
+.ai-engine .engine-diagnosis {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* NEVER FORCE AI CARD TALLER */
+.ai-engine > * {
+  flex-shrink: 0;
+}
+/* =========================================
+   AUREX CONTROL ROOM
+   ========================================= */
+
+.control-room {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 70px 28px 60px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.control-kicker {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.control-header h2 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.control-header p {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.system-status {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #00ff9c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.system-status i {
+  width: 7px;
+  height: 7px;
+  background: #00ff9c;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00ff9c;
+}
+
+
+/* =========================================
+   MAIN THREE-CARD GRID
+   ========================================= */
+
+.control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+
+  /* IMPORTANT */
+  align-items: stretch;
+
+  width: 100%;
+}
+
+
+/* =========================================
+   COMMON CARD
+   ========================================= */
+
+.payment-card,
+.ai-engine,
+.decision-card {
+  height: 560px;
+  min-height: 560px;
+  box-sizing: border-box;
+
+  border: 1px solid #242424;
+  background: rgba(5, 5, 5, 0.92);
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CARD TOP
+   ========================================= */
+
+.card-top {
+  height: 62px;
+  padding: 0 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #242424;
+
+  box-sizing: border-box;
+}
+
+.card-top span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+
+/* =========================================
+   LEFT — PAYMENT CARD
+   ========================================= */
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-amount {
+  margin: 65px 34px 0;
+
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: #eee;
+}
+
+.payment-status {
+  margin: 28px 34px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #ff3030;
+}
+
+.payment-status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3030;
+  box-shadow: 0 0 10px #ff3030;
+}
+
+.payment-status.status-recovered {
+  color: #00ff9c;
+}
+
+.payment-status.status-recovered i {
+  background: #00ff9c;
+  box-shadow: 0 0 10px #00ff9c;
+}
+
+.payment-reason {
+  margin: 18px 34px 0;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.payment-details {
+  margin: 70px 34px 0;
+
+  padding-top: 28px;
+
+  border-top: 1px solid #242424;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.payment-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-details span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+.payment-details strong {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #bbb;
+}
+
+.payment-details .risk-high {
+  color: #ff3030;
+}
+
+.payment-detected {
+  margin-top: auto;
+
+  height: 70px;
+  padding: 0 34px;
+
+  border-top: 1px solid #242424;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.payment-detected span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+.payment-detected strong {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #ff3030;
+}
+
+
+/* =========================================
+   CENTER — AI ENGINE
+   ========================================= */
+
+.ai-engine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.engine-label {
+  width: 100%;
+  height: 62px;
+
+  padding: 0 34px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #242424;
+
+  color: #ff3030;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+
+/* AI CORE */
+
+.engine-core {
+  margin-top: 55px;
+
+  width: 150px;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-ring {
+  width: 92px;
+  height: 92px;
+
+  border: 1px solid #ff3030;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ff3030;
+
+  font-size: 20px;
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 0 25px rgba(255, 40, 40, 0.12),
+    inset 0 0 20px rgba(255, 40, 40, 0.05);
+}
+
+.core-success .core-ring {
+  border-color: #00ff9c;
+  color: #00ff9c;
+
+  box-shadow:
+    0 0 30px rgba(0, 255, 156, 0.15),
+    inset 0 0 20px rgba(0, 255, 156, 0.05);
+}
+
+
+/* ENGINE STATUS */
+
+.engine-status {
+  margin-top: 18px;
+
+  font-size: 16px;
+  letter-spacing: 3px;
+
+  color: #ddd;
+}
+
+.engine-success {
+  color: #00ff9c;
+}
+
+
+/* SIGNALS */
+
+.engine-signals {
+  margin-top: 58px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  width: 240px;
+  text-align: left;
+}
+
+.engine-signals span {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #666;
+}
+
+
+/* =========================================
+   DIAGNOSIS
+   ========================================= */
+
+.engine-diagnosis {
+  margin-top: auto;
+  margin-bottom: 30px;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  text-align: center;
+}
+
+.engine-diagnosis span {
+  display: block;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+
+  color: #666;
+}
+
+.engine-diagnosis strong {
+  display: block;
+
+  font-size: 15px;
+  letter-spacing: 1.5px;
+
+  color: #ddd;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   RIGHT — DECISION CARD
+   ========================================= */
+
+.decision-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.confidence {
+  margin: 65px 34px 0;
+
+  font-size: 48px;
+  line-height: 1;
+
+  color: #eee;
+  letter-spacing: -1px;
+}
+
+.decision-action {
+  margin: 28px 34px 0;
+
+  color: #ff3030;
+
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.decision-card p {
+  margin: 42px 34px 0;
+
+  max-width: 430px;
+
+  font-size: 13px;
+  line-height: 1.9;
+
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+
+/* EXECUTE BUTTON */
+
+.execute-btn {
+  margin: 42px 34px 0;
+
+  width: fit-content;
+  min-width: 210px;
+  height: 54px;
+
+  padding: 0 24px;
+
+  background: transparent;
+
+  border: 1px solid #ff3030;
+
+  color: #ff3030;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.execute-btn:hover {
+  background: rgba(255, 48, 48, 0.08);
+  box-shadow: 0 0 20px rgba(255, 48, 48, 0.12);
+}
+
+.execute-btn:disabled {
+  cursor: default;
+}
+
+.execute-btn.recovery-success {
+  border-color: #00ff9c;
+  color: #00ff9c;
+
+  box-shadow: 0 0 20px rgba(0, 255, 156, 0.08);
+}
+
+
+/* DECISION RESULT */
+
+.decision-result {
+  margin: auto 34px 30px;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  color: #777;
+}
+
+.decision-result strong {
+  color: #ddd;
+}
+
+
+/* ERROR */
+
+.error-message {
+  margin: 15px 34px;
+
+  color: #ff3030;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   RECOVERY PIPELINE
+   ========================================= */
+
+.recovery-pipeline {
+  margin-top: 20px;
+
+  min-height: 105px;
+
+  border: 1px solid #242424;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  box-sizing: border-box;
+}
+
+.pipeline-step {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pipeline-step span {
+  font-size: 9px;
+  color: #555;
+}
+
+.pipeline-step strong {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.pipeline-step small {
+  font-size: 9px;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+.pipeline-step.active strong {
+  color: #ddd;
+}
+
+.pipeline-step.recovered.active strong {
+  color: #00ff9c;
+}
+
+.pipeline-step.recovered.active small {
+  color: #00a86b;
+}
+
+.pipeline-line {
+  flex: 1;
+  height: 1px;
+  background: #333;
+  margin: 0 18px;
+}
+
+
+/* =========================================
+   SUMMARY
+   ========================================= */
+
+.control-summary {
+  margin-top: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border: 1px solid #242424;
+}
+
+.control-summary > div {
+  min-height: 100px;
+
+  padding: 24px 28px;
+
+  border-right: 1px solid #242424;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.control-summary > div:last-child {
+  border-right: none;
+}
+
+.control-summary span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #555;
+
+  margin-bottom: 12px;
+}
+
+.control-summary strong {
+  font-size: 23px;
+  font-weight: 400;
+  color: #ddd;
+}
+
+.control-summary .revenue-recovered {
+  color: #00ff9c;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-card,
+  .ai-engine,
+  .decision-card {
+    height: 560px;
+    min-height: 560px;
+  }
+
+  .control-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .control-room {
+    padding: 40px 15px;
+  }
+
+  .control-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .payment-details {
+    grid-template-columns: 1fr;
+  }
+
+  .control-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .control-summary > div {
+    border-right: none;
+    border-bottom: 1px solid #242424;
+  }
+
+  .control-summary > div:last-child {
+    border-bottom: none;
+  }
+
+  .recovery-pipeline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .pipeline-line {
+    width: 100%;
+    margin: 0;
+  }
+}
+.intelligence-header h2 {
+  font-family: "Handjet", sans-serif;
+  font-size: clamp(55px, 6vw, 95px);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  color: #f4eee3;
+}
+/* ============================================================
+   AUREX — HOW IT WORKS
+   UNIFIED SYSTEM DESIGN
+   ============================================================ */
+
+.how-it-works {
+  position: relative;
+  padding: 140px 5.3vw;
+  background: #050505;
+  color: #f4eee3;
+  overflow: hidden;
+}
+.how-it-works::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+
+  background-size: 90px 90px;
+
+  pointer-events: none;
+}
+
+.how-it-works > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.how-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 75px;
+}
+
+.how-kicker {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #ff2b2b;
+  opacity: 0.9;
+}
+
+.how-header h2 {
+  margin: 0;
+  font-family: "Handjet", sans-serif !important;
+  font-size: clamp(55px, 6vw, 95px) !important;
+  font-weight: 600 !important;
+  line-height: 0.85 !important;
+  letter-spacing: -0.02em !important;
+  color: #f4eee3 !important;
+  text-transform: uppercase !important;
+}
+
+.how-header p {
+  max-width: 600px;
+  margin-top: 28px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(244, 238, 227, 0.55);
+}
+
+.how-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(244, 238, 227, 0.12);
+
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: #f4eee3;
+}
+
+.how-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: #00ff9c;
+  box-shadow: 0 0 12px rgba(0, 255, 156, 0.7);
+}
+
+
+/* ============================================================
+   HORIZONTAL SYSTEM FLOW
+   ============================================================ */
+
+.how-flow {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    55px
+    minmax(0, 1fr)
+    55px
+    minmax(0, 1fr)
+    55px
+    minmax(0, 1fr);
+
+  align-items: stretch;
+}
+
+
+/* ============================================================
+   STEP BOX
+   ============================================================ */
+
+.how-step {
+  position: relative;
+
+  min-height: 380px;
+
+  padding: 28px;
+
+  border: 1px solid rgba(244, 238, 227, 0.13);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.008)
+    );
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.how-step:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 43, 43, 0.5);
+
+  background: rgba(255, 43, 43, 0.025);
+}
+
+
+/* ============================================================
+   STEP TOP
+   ============================================================ */
+
+.how-step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.how-step-top > span:first-child {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #f4eee3;
+  opacity: 0.45;
+}
+.how-state {
+  font-size: 8px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.45);
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.how-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(244, 238, 227, 0.16);
+
+  font-family: "Handjet", sans-serif;
+  font-size: 20px;
+
+  color: #f4eee3;
+}
+
+.how-icon.danger {
+  color: #ff2b2b;
+  border-color: rgba(255, 43, 43, 0.45);
+}
+
+.how-icon.ai {
+  color: #ff2b2b;
+  border-color: rgba(255, 43, 43, 0.45);
+}
+
+.how-icon.success {
+  color: #00ff9c;
+  border-color: rgba(0, 255, 156, 0.45);
+}
+
+
+/* ============================================================
+   LABEL
+   ============================================================ */
+
+.how-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 8px;
+  letter-spacing: 2.5px;
+
+  color: rgba(244, 238, 227, 0.45);
+}
+
+
+/* ============================================================
+   STEP TITLE
+   ============================================================ */
+
+.how-step h3 {
+  margin: 0;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #f4eee3;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.how-step p {
+  max-width: 330px;
+
+  margin-top: 20px;
+
+  font-size: 12px;
+  line-height: 1.7;
+
+  color: rgba(244, 238, 227, 0.52);
+}
+
+
+/* ============================================================
+   DATA
+   ============================================================ */
+
+.how-data {
+  position: absolute;
+
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.1);
+}
+
+.how-data span {
+  font-size: 8px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.35);
+}
+
+.how-data strong {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+
+  color: #ff2b2b;
+}
+
+
+/* ============================================================
+   CONNECTORS
+   ============================================================ */
+
+.how-connector {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #ff2b2b;
+
+  font-size: 18px;
+}
+
+.how-connector span {
+  font-size: 7px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.4);
+}
+
+
+/* ============================================================
+   CONNECTOR LINE
+   ============================================================ */
+
+.how-connector::after {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: rgba(255, 43, 43, 0.45);
+
+  order: 2;
+}
+
+.how-connector span {
+  order: 1;
+}
+
+
+/* ============================================================
+   AI DECISION CARD
+   ============================================================ */
+
+.ai-step {
+  border-color: rgba(255, 43, 43, 0.35);
+}
+
+.ai-step:hover {
+  border-color: rgba(255, 43, 43, 0.7);
+}
+
+
+/* ============================================================
+   RECOVERY CARD
+   ============================================================ */
+
+.success-step {
+  border-color: rgba(0, 255, 156, 0.3);
+}
+
+.success-step:hover {
+  border-color: rgba(0, 255, 156, 0.65);
+
+  background: rgba(0, 255, 156, 0.018);
+}
+
+.success-step .how-step-top > span:first-child {
+  color: #00ff9c;
+}
+
+.success-step .how-data strong {
+  color: #00ff9c;
+}
+
+
+/* ============================================================
+   BOTTOM SYSTEM BAR
+   ============================================================ */
+
+.how-bottom {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 65px;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.12);
+  border-bottom: 1px solid rgba(244, 238, 227, 0.12);
+}
+
+.how-bottom > div {
+  min-height: 105px;
+
+  padding: 22px 24px;
+
+  border-right: 1px solid rgba(244, 238, 227, 0.1);
+}
+
+.how-bottom > div:last-child {
+  border-right: none;
+}
+
+.how-bottom span {
+  display: block;
+  margin-bottom: 8px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #f4eee3;
+  opacity: 0.45;
+}
+
+.how-bottom strong {
+  display: block;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #f4eee3;
+}
+
+.how-bottom small {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 9px;
+
+  color: rgba(244, 238, 227, 0.38);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .how-flow {
+    grid-template-columns:
+      1fr
+      40px
+      1fr
+      40px
+      1fr
+      40px
+      1fr;
+  }
+
+  .how-step {
+    min-height: 340px;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .how-it-works {
+    padding: 100px 6vw;
+  }
+
+  .how-header {
+    display: block;
+  }
+
+  .how-status {
+    margin-top: 30px;
+    width: fit-content;
+  }
+
+  .how-flow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .how-step {
+    min-height: 330px;
+  }
+
+  .how-connector {
+    height: 55px;
+    flex-direction: row;
+  }
+
+  .how-connector::after {
+    width: 1px;
+    height: 22px;
+  }
+
+  .how-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .how-bottom > div:nth-child(2) {
+    border-right: none;
+  }
+
+  .how-bottom > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(244, 238, 227, 0.1);
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .how-header h2 {
+    font-size: 65px;
+  }
+
+  .how-step {
+    padding: 24px;
+  }
+
+  .how-data {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .how-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .how-bottom > div {
+    border-right: none;
+    border-bottom: 1px solid rgba(244, 238, 227, 0.1);
+  }
+
+  .how-bottom > div:last-child {
+    border-bottom: none;
+  }
+
+}
+/* HOW IT WORKS — MAIN TITLE ONLY */
+.how-header h2 {
+  margin: 0;
+  font-family: "Handjet", sans-serif !important;
+  font-size: clamp(55px, 6vw, 95px) !important;
+  font-weight: 600 !important;
+  line-height: 0.85 !important;
+  letter-spacing: -0.02em !important;
+  color: #f4eee3 !important;
+  text-transform: uppercase !important;
+}
+/* ============================================================
+   AUREX — SYSTEM CAPABILITIES
+   ============================================================ */
+
+.capabilities {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 140px 4vw 120px;
+
+  background-color: #050505;
+
+  color: #f4eee3;
+
+  overflow: hidden;
+
+  /* AUREX GRID */
+  background-image:
+    linear-gradient(
+      rgba(244, 238, 227, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(244, 238, 227, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.capabilities-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 80px;
+}
+
+
+/* ============================================================
+   KICKER
+   ============================================================ */
+
+.capabilities-kicker {
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: rgba(244, 238, 227, 0.5);
+}
+
+
+/* ============================================================
+   MAIN TITLE
+   ONLY THIS USES HANDJET
+   ============================================================ */
+
+.capabilities-header h2 {
+  margin: 0;
+
+  font-family: "Handjet", sans-serif;
+
+  font-size: clamp(72px, 8vw, 125px);
+
+  font-weight: 600;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
+
+  color: #f4eee3;
+}
+
+
+/* ============================================================
+   HEADER DESCRIPTION
+   ============================================================ */
+
+.capabilities-header p {
+  max-width: 570px;
+
+  margin: 30px 0 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: rgba(244, 238, 227, 0.52);
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+.capabilities-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 8px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.6);
+}
+
+
+.capabilities-status i {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ff2a2a;
+
+  box-shadow:
+    0 0 12px rgba(255, 42, 42, 0.7);
+}
+
+
+/* ============================================================
+   CAPABILITY GRID
+   ============================================================ */
+
+.capabilities-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(244, 238, 227, 0.12);
+
+  border-left: 1px solid rgba(244, 238, 227, 0.12);
+}
+
+
+/* ============================================================
+   CAPABILITY CARD
+   ============================================================ */
+
+.capability-card {
+  position: relative;
+
+  min-height: 360px;
+
+  padding: 30px 32px;
+
+  background: rgba(5, 5, 5, 0.72);
+
+  border-right: 1px solid rgba(244, 238, 227, 0.12);
+
+  border-bottom: 1px solid rgba(244, 238, 227, 0.12);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* ============================================================
+   CARD HOVER
+   ============================================================ */
+
+.capability-card:hover {
+  background: rgba(255, 255, 255, 0.018);
+
+  border-color: rgba(255, 42, 42, 0.32);
+
+  transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   CARD TOP
+   ============================================================ */
+
+.capability-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 42px;
+}
+
+
+/* NUMBER */
+
+.capability-top > span:first-child {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #ff2a2a;
+}
+
+
+/* STATE */
+
+.capability-top > span:last-child {
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.38);
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.capability-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(244, 238, 227, 0.17);
+
+  font-size: 17px;
+
+  color: #f4eee3;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* RED ICON ON HOVER */
+
+.capability-card:hover .capability-icon {
+  color: #ff2a2a;
+
+  border-color: rgba(255, 42, 42, 0.45);
+}
+
+
+/* AI ICON */
+
+.capability-icon.ai {
+  color: #ff2a2a;
+
+  border-color: rgba(255, 42, 42, 0.4);
+}
+
+
+/* SUCCESS ICON */
+
+.capability-icon.success {
+  color: #ff2a2a;
+
+  border-color: rgba(255, 42, 42, 0.4);
+}
+
+
+/* ============================================================
+   CARD LABEL
+   ============================================================ */
+
+.capability-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 9px;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  color: rgba(244, 238, 227, 0.42);
+}
+
+
+/* ============================================================
+   CARD TITLE
+   IMPORTANT:
+   NORMAL FONT — NOT HANDJET
+   ============================================================ */
+
+.capability-card h3 {
+  margin: 0;
+
+  font-family: inherit;
+
+  font-size: clamp(27px, 2.5vw, 39px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: #f4eee3;
+}
+
+
+/* ============================================================
+   CARD DESCRIPTION
+   ============================================================ */
+
+.capability-card p {
+  max-width: 420px;
+
+  margin: 20px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+  color: rgba(244, 238, 227, 0.5);
+}
+
+
+/* ============================================================
+   CARD DATA
+   ============================================================ */
+
+.capability-data {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 24px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.09);
+}
+
+
+.capability-data span {
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.35);
+}
+
+
+.capability-data strong {
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.2px;
+
+  color: #ff2a2a;
+}
+
+
+/* ============================================================
+   BOTTOM SYSTEM STATEMENT
+   YOUR JSX HAS ONLY SPAN + STRONG
+   ============================================================ */
+
+.capabilities-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-top: 70px;
+
+  padding: 24px 0;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.12);
+
+  border-bottom: 1px solid rgba(244, 238, 227, 0.12);
+}
+
+
+.capabilities-bottom span {
+  font-size: 9px;
+
+  letter-spacing: 2.5px;
+
+  color: rgba(244, 238, 227, 0.38);
+}
+
+
+.capabilities-bottom strong {
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  color: #f4eee3;
+}
+
+
+/* ============================================================
+   SUBTLE RED SYSTEM LINE
+   ============================================================ */
+
+.capabilities::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 4vw;
+
+  width: 1px;
+  height: 100%;
+
+  background: rgba(255, 42, 42, 0.1);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+  .capabilities {
+    padding: 110px 5vw 90px;
+
+    background-size: 42px 42px;
+  }
+
+
+  .capabilities-header {
+    display: block;
+
+    margin-bottom: 60px;
+  }
+
+
+  .capabilities-status {
+    margin-top: 30px;
+
+    padding-bottom: 0;
+  }
+
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .capability-card {
+    min-height: 350px;
+
+    padding: 28px;
+  }
+
+
+  .capabilities-bottom {
+    display: block;
+  }
+
+
+  .capabilities-bottom strong {
+    display: block;
+
+    margin-top: 15px;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 650px) {
+
+  .capabilities {
+    padding: 90px 5vw 70px;
+
+    background-size: 35px 35px;
+  }
+
+
+  .capabilities-header h2 {
+    font-size: clamp(60px, 18vw, 95px);
+  }
+
+
+  .capabilities-header p {
+    font-size: 13px;
+  }
+
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .capability-card {
+    min-height: auto;
+
+    padding: 26px;
+  }
+
+
+  .capability-top {
+    margin-bottom: 35px;
+  }
+
+
+  .capability-card h3 {
+    font-size: 31px;
+  }
+
+
+  .capabilities-bottom span,
+  .capabilities-bottom strong {
+    font-size: 9px;
+
+    line-height: 1.6;
+  }
+
+}
+/* ============================================================
+   AUREX — INSIGHTS
+   SAME VISUAL SYSTEM AS THE OTHER SECTIONS
+   ============================================================ */
+
+.insights {
+  position: relative;
+  padding: 140px 5.3vw;
+  background: #050505;
+  color: #f4eee3;
+  overflow: hidden;
+}
+
+/* SAME AUREX GRID */
+
+.insights::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+  pointer-events: none;
+}
+
+.insights > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 90px;
+}
+
+.insights-kicker {
+  display: block;
+  margin-bottom: 22px;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(244, 238, 227, 0.55);
+}
+
+
+/* ONLY MAIN TITLE = HANDJET */
+
+.insights-header h2 {
+  margin: 0;
+
+  font-family: "Handjet", sans-serif;
+  font-size: clamp(70px, 7vw, 115px);
+  font-weight: 600;
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+
+  color: #f4eee3;
+}
+
+.insights-header p {
+  max-width: 700px;
+  margin-top: 30px;
+
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: rgba(244, 238, 227, 0.55);
+}
+
+.insights-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.7);
+}
+
+.insights-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+
+  background: #ff2b2b;
+  box-shadow: 0 0 12px rgba(255, 43, 43, 0.7);
+}
+
+
+/* ============================================================
+   TOP METRICS
+   ============================================================ */
+
+.insights-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(244, 238, 227, 0.12);
+  border-left: 1px solid rgba(244, 238, 227, 0.12);
+
+  margin-bottom: 70px;
+}
+
+.insight-metric {
+  min-height: 120px;
+  padding: 25px;
+
+  background: rgba(5, 5, 5, 0.82);
+
+  border-right: 1px solid rgba(244, 238, 227, 0.12);
+  border-bottom: 1px solid rgba(244, 238, 227, 0.12);
+}
+
+.insight-metric span {
+  display: block;
+  margin-bottom: 15px;
+
+  font-size: 9px;
+  letter-spacing: 2.5px;
+
+  color: rgba(244, 238, 227, 0.4);
+}
+
+.insight-metric strong {
+  display: block;
+
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  color: #f4eee3;
+}
+
+.insight-metric.recovery strong {
+  color: #ff2b2b;
+}
+
+
+/* ============================================================
+   INSIGHT GRID
+   ============================================================ */
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1px;
+
+  border: 1px solid rgba(244, 238, 227, 0.12);
+
+  background: rgba(244, 238, 227, 0.12);
+}
+
+
+/* ============================================================
+   PANELS
+   ============================================================ */
+
+.insight-panel {
+  min-height: 330px;
+  padding: 34px;
+
+  background: #050505;
+}
+
+
+/* ============================================================
+   PANEL TOP
+   ============================================================ */
+
+.insight-panel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 45px;
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(244, 238, 227, 0.08);
+}
+
+.insight-panel-top span:first-child {
+  font-family: inherit;
+  font-size: 11px;
+  color: #ff2b2b;
+}
+
+.insight-panel-top span:last-child {
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.4);
+}
+
+
+/* ============================================================
+   PANEL TEXT
+   ============================================================ */
+
+.insight-label {
+  display: block;
+  margin-bottom: 12px;
+
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+
+  color: rgba(244, 238, 227, 0.4);
+}
+
+.insight-panel h3 {
+  margin: 0;
+
+  font-family: inherit;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 500;
+
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  color: #f4eee3;
+}
+
+.insight-panel p {
+  max-width: 600px;
+  margin-top: 22px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.65;
+
+  color: rgba(244, 238, 227, 0.55);
+}
+
+
+/* ============================================================
+   DATA ROW
+   ============================================================ */
+
+.insight-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 30px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.1);
+}
+
+.insight-data div {
+  padding-right: 18px;
+
+  border-right: 1px solid rgba(244, 238, 227, 0.08);
+}
+
+.insight-data div:last-child {
+  border-right: none;
+}
+
+.insight-data span {
+  display: block;
+  margin-bottom: 8px;
+
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.35);
+}
+
+.insight-data strong {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  color: #f4eee3;
+}
+
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+
+.insight-progress {
+  margin-top: 30px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.1);
+}
+
+.insight-progress-label {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.insight-progress-label span {
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.45);
+}
+
+.insight-progress-label strong {
+  font-family: inherit;
+  font-size: 10px;
+
+  color: #ff2b2b;
+}
+
+.insight-progress-track {
+  width: 100%;
+  height: 2px;
+
+  background: rgba(244, 238, 227, 0.1);
+}
+
+.insight-progress-track i {
+  display: block;
+  height: 100%;
+
+  background: #ff2b2b;
+}
+
+
+/* ============================================================
+   DECISION
+   ============================================================ */
+
+.insight-decision {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(244, 238, 227, 0.1);
+}
+
+.insight-decision span {
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.35);
+}
+
+.insight-decision strong {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+
+  color: #ff2b2b;
+}
+
+
+/* ============================================================
+   SYSTEM STATEMENT
+   ============================================================ */
+
+.insights-system {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 25px;
+
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.4);
+}
+
+.insights-system strong {
+  font-weight: 500;
+  color: #ff2b2b;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .insights {
+    padding: 110px 6vw;
+  }
+
+  .insights-header {
+    display: block;
+  }
+
+  .insights-status {
+    margin-top: 35px;
+  }
+
+  .insights-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .insights {
+    padding: 90px 5vw;
+  }
+
+  .insights-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-data {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-data div {
+    padding: 12px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(244, 238, 227, 0.08);
+  }
+
+  .insight-data div:last-child {
+    border-bottom: none;
+  }
+
+  .insights-system {
+    flex-wrap: wrap;
+    line-height: 1.8;
+  }
+}
+/* ============================================================
+   AUREX CONTROL ROOM — ALIGNMENT FIX
+   ============================================================ */
+
+.control-room {
+  width: 100%;
+  padding: 80px 32px 100px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.control-header {
+  max-width: 1780px;
+  margin: 0 auto 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.control-header h2 {
+  margin: 12px 0 14px;
+}
+
+.control-header p {
+  margin: 0;
+}
+
+/* ============================================================
+   MAIN 3-COLUMN DASHBOARD
+   ============================================================ */
+
+.control-grid {
+  max-width: 1780px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ALL THREE CARDS SAME HEIGHT */
+.payment-card,
+.ai-engine,
+.decision-card {
+  min-height: 700px;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   CARD INTERNAL ALIGNMENT
+   ============================================================ */
+
+.payment-card,
+.ai-engine,
+.decision-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top labels */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 76px;
+  padding: 0 42px;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   PAYMENT CARD
+   ============================================================ */
+
+.payment-amount {
+  margin: 70px 42px 30px;
+}
+
+.payment-status {
+  margin-left: 42px;
+}
+
+.payment-reason {
+  margin: 22px 42px 65px;
+}
+
+.payment-details {
+  margin: 0 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.payment-detected {
+  margin-top: auto;
+  padding: 32px 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================================================
+   AI ENGINE
+   ============================================================ */
+
+.ai-engine {
+  align-items: center;
+  text-align: center;
+}
+
+.engine-label {
+  align-self: stretch;
+  text-align: left;
+  min-height: 76px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.engine-core {
+  margin-top: 55px;
+}
+
+.engine-status {
+  margin-top: 35px;
+}
+
+.engine-signals {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.engine-diagnosis {
+  margin-top: auto;
+  margin-bottom: 35px;
+}
+
+/* ============================================================
+   DECISION CARD
+   ============================================================ */
+
+.decision-card {
+  padding-bottom: 35px;
+}
+
+.confidence {
+  margin: 105px 0 25px 90px;
+}
+
+.decision-action {
+  margin-left: 90px;
+  margin-bottom: 50px;
+}
+
+.decision-card p {
+  margin: 0 90px 55px;
+  line-height: 1.8;
+}
+
+.execute-btn {
+  margin-left: 90px;
+  width: calc(100% - 180px);
+  box-sizing: border-box;
+}
+
+.decision-result {
+  margin: 30px 90px 0;
+}
+
+.error-message {
+  margin: 20px 90px 0;
+}
+
+/* ============================================================
+   RECOVERY PIPELINE
+   ============================================================ */
+
+.recovery-pipeline {
+  max-width: 1780px;
+  margin: 35px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pipeline-step {
+  flex: 1;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.pipeline-line {
+  width: 60px;
+  height: 1px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+
+.control-summary {
+  max-width: 1780px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.control-summary > div {
+  min-height: 120px;
+  padding: 30px 35px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.control-summary strong {
+  margin-top: 12px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-card,
+  .ai-engine,
+  .decision-card {
+    min-height: 600px;
+  }
+
+  .control-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+
+  .control-room {
+    padding: 50px 18px;
+  }
+
+  .control-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .payment-details {
+    grid-template-columns: 1fr;
+  }
+
+  .recovery-pipeline {
+    flex-direction: column;
+  }
+
+  .pipeline-line {
+    width: 1px;
+    height: 35px;
+  }
+
+  .control-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .confidence,
+  .decision-action {
+    margin-left: 40px;
+  }
+
+  .decision-card p {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .execute-btn {
+    margin-left: 40px;
+    width: calc(100% - 80px);
+  }
+
+  .decision-result,
+  .error-message {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+.recovery-result {
+  margin: 30px 90px 0;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.recovery-result span,
+.recovery-result small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.55;
+}
+
+.recovery-result strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 32px;
+  color: #00ff9c;
+}
+/* ============================================================
+   AUREX TRANSACTION RECOVERY LOG
+   ============================================================ */
+
+.transaction-log {
+  max-width: 1780px;
+  margin: 35px auto 0;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.015);
+}
+
+.transaction-log-header {
+  min-height: 110px;
+  padding: 30px 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  box-sizing: border-box;
+}
+
+.transaction-log-header span {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  opacity: 0.45;
+}
+
+.transaction-log-header h3 {
+  margin: 8px 0 0;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.transaction-count {
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: 0.55;
+}
+
+/* TABLE */
+
+.transaction-table {
+  width: 100%;
+}
+
+.transaction-table-head,
+.transaction-row {
+  display: grid;
+  grid-template-columns:
+    1.1fr
+    1.2fr
+    0.8fr
+    1.3fr
+    1fr
+    1fr;
+
+  align-items: center;
+  column-gap: 20px;
+}
+
+.transaction-table-head {
+  min-height: 55px;
+  padding: 0 38px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.4;
+}
+
+.transaction-row {
+  min-height: 70px;
+  padding: 0 38px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.transaction-row:last-child {
+  border-bottom: none;
+}
+
+.transaction-row > span {
+  opacity: 0.65;
+}
+
+.transaction-row strong {
+  font-size: 11px;
+}
+
+.txn-score {
+  font-weight: 700;
+}
+
+.txn-success {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.txn-escalated {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.txn-stopped {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* HOVER */
+
+.transaction-row:hover {
+  background: rgba(255,255,255,0.025);
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .transaction-log {
+    overflow-x: auto;
+  }
+
+  .transaction-table {
+    min-width: 850px;
+  }
+
+  .transaction-log-header {
+    min-width: 850px;
+  }
+}
+/* ============================================================
+   AUREX TRANSACTION AUDIT
+============================================================ */
+
+.audit-section {
+  margin-top: 28px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: #090909;
+}
+
+.audit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.audit-header h3 {
+  margin: 8px 0 6px;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.audit-header p {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.audit-status {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #888;
+}
+
+.audit-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.audit-row {
+  min-width: 1000px;
+  display: grid;
+  grid-template-columns:
+    1.1fr
+    1.3fr
+    1.4fr
+    .7fr
+    1.4fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  padding: 17px 28px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  font-size: 11px;
+  letter-spacing: .4px;
+  color: #999;
+}
+
+.audit-table-head {
+  background: #111;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.audit-row:last-child {
+  border-bottom: none;
+}
+
+.audit-id {
+  color: #eee;
+  font-weight: 600;
+}
+
+.audit-score {
+  color: #fff;
+  font-weight: 700;
+}
+
+.decision-recover {
+  color: #fff;
+}
+
+.decision-escalate {
+  color: #ff5a5a;
+}
+
+.decision-hold {
+  color: #aaa;
+}
+
+.status-recovered-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.status-escalated-text {
+  color: #ff5a5a;
+  font-weight: 600;
+}
+
+.status-stopped-text {
+  color: #777;
+}
+/* =========================================================
+   AUREX — RECOVERY ACTIVITY
+   ========================================================= */
+
+.recovery-activity {
+  position: relative;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+
+  padding: 100px 28px 90px;
+
+  box-sizing: border-box;
+
+  background-color: #050505;
+  color: #f4eee3;
+
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      rgba(244, 238, 227, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(244, 238, 227, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 72px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.activity-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 50px;
+}
+
+.activity-header h2 {
+  margin: 0;
+
+  font-family: "Handjet", sans-serif;
+
+  font-size: clamp(65px, 7vw, 110px);
+
+  font-weight: 600;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
+
+  color: #f4eee3;
+}
+
+.activity-header p {
+  max-width: 600px;
+
+  margin: 25px 0 0;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.04em;
+
+  color: rgba(244, 238, 227, 0.48);
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.recovery-activity .control-kicker {
+  display: block;
+
+  margin-bottom: 22px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: rgba(244, 238, 227, 0.45);
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+   ========================================================= */
+
+.activity-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding-bottom: 8px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #00d878;
+}
+
+.activity-status i {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #00d878;
+
+  box-shadow:
+    0 0 12px rgba(0, 216, 120, 0.7);
+
+  animation: activityPulse 2s ease-in-out infinite;
+}
+
+@keyframes activityPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.activity-table {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  border: 1px solid rgba(244, 238, 227, 0.12);
+
+  background: rgba(5, 5, 5, 0.72);
+
+  backdrop-filter: blur(10px);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.activity-table-header {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    1.25fr
+    1.25fr
+    0.9fr
+    0.9fr
+    0.8fr;
+
+  min-height: 58px;
+
+  align-items: center;
+
+  border-bottom:
+    1px solid rgba(244, 238, 227, 0.12);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.activity-table-header span {
+  padding: 0 22px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+
+  color: rgba(244, 238, 227, 0.42);
+}
+
+
+/* =========================================================
+   TABLE ROW
+   ========================================================= */
+
+.activity-row {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    1.25fr
+    1.25fr
+    0.9fr
+    0.9fr
+    0.8fr;
+
+  min-height: 82px;
+
+  align-items: center;
+
+  border-bottom:
+    1px solid rgba(244, 238, 227, 0.07);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.activity-row:last-child {
+  border-bottom: none;
+}
+
+.activity-row:hover {
+  background: rgba(255, 48, 53, 0.035);
+
+  border-bottom-color:
+    rgba(255, 48, 53, 0.2);
+}
+
+
+/* =========================================================
+   CELL
+   ========================================================= */
+
+.activity-row > div {
+  min-width: 0;
+
+  padding: 0 22px;
+}
+
+
+/* =========================================================
+   TRANSACTION
+   ========================================================= */
+
+.activity-transaction strong {
+  font-family: "DM Mono", monospace;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.04em;
+
+  color: #f4eee3;
+}
+
+
+/* =========================================================
+   EVENT
+   ========================================================= */
+
+.activity-event {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(244, 238, 227, 0.62);
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.activity-action {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.07em;
+
+  color: #ff3035;
+}
+
+
+/* =========================================================
+   PROBABILITY
+   ========================================================= */
+
+.activity-probability {
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  color: #f4eee3;
+}
+
+
+/* =========================================================
+   AMOUNT
+   ========================================================= */
+
+.activity-amount {
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  color: #f4eee3;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.activity-status-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 7px 10px;
+
+  border: 1px solid;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 1.2px;
+
+  background: transparent;
+}
+
+
+/* SUCCESS */
+
+.activity-success {
+  color: #00d878;
+
+  border-color:
+    rgba(0, 216, 120, 0.35);
+
+  background:
+    rgba(0, 216, 120, 0.045);
+
+  box-shadow:
+    0 0 12px rgba(0, 216, 120, 0.04);
+}
+
+
+/* HELD */
+
+.activity-held {
+  color: #f0c674;
+
+  border-color:
+    rgba(240, 198, 116, 0.3);
+
+  background:
+    rgba(240, 198, 116, 0.035);
+}
+
+
+/* STOPPED */
+
+.activity-stopped {
+  color: #ff3035;
+
+  border-color:
+    rgba(255, 48, 53, 0.35);
+
+  background:
+    rgba(255, 48, 53, 0.04);
+}
+
+
+/* ESCALATED */
+
+.activity-escalated {
+  color: #ff6b6b;
+
+  border-color:
+    rgba(255, 107, 107, 0.4);
+
+  background:
+    rgba(255, 48, 53, 0.05);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.activity-empty {
+  min-height: 220px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.3);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.activity-loading {
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid rgba(244, 238, 227, 0.1);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: rgba(244, 238, 227, 0.4);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.activity-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding-top: 18px;
+}
+
+.activity-footer span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+
+  color: rgba(244, 238, 227, 0.35);
+}
+
+.activity-footer span:last-child {
+  color: rgba(255, 48, 53, 0.6);
+}
+
+
+/* =========================================================
+   RED DATA GLOW
+   ========================================================= */
+
+.recovery-activity::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: 5%;
+  top: 20%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 48, 53, 0.045),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .activity-table {
+    overflow-x: auto;
+  }
+
+  .activity-table-header,
+  .activity-row {
+    min-width: 950px;
+  }
+
+  .activity-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .recovery-activity {
+    padding:
+      70px 18px 60px;
+  }
+
+  .activity-header h2 {
+    font-size: 60px;
+  }
+
+  .activity-header p {
+    font-size: 11px;
+  }
+
+  .activity-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+}

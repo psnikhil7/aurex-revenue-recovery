@@ -1,0 +1,34 @@
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+:root {
+  font-family: "IBM Plex Mono", monospace;
+  background: #050505;
+  color: #f2eee5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: #050505;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #050505;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
