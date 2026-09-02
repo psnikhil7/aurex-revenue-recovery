@@ -49,7 +49,7 @@ function ControlRoom({ onRecoveryComplete }) {
   const fetchDashboardData = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8001/dashboard-metrics"
+        /api/dashboard-metrics
       );
 
       if (!response.ok) {
@@ -82,7 +82,7 @@ function ControlRoom({ onRecoveryComplete }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8001/run-recovery",
+       /api/run-recovery,
         {
           method: "POST",
           headers: {
