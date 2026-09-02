@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 import joblib
-import pandas as pd
+import numpy as np
 import os
 
 
@@ -37,7 +37,7 @@ app.add_middleware(
 
 MODEL_PATH = os.path.join(
     os.path.dirname(__file__),
-    "aurex_recovery_model.pkl"
+    "aurex_recovery_model_light.pkl"
 )
 
 try:
@@ -272,24 +272,13 @@ def ml_predict(transaction):
 
     if model is None:
         return None
-
-    model_input = pd.DataFrame([
-        {
-            "amount": transaction.amount,
-
-            "payment_method":
-                transaction.payment_method.upper().strip(),
-
-            "failure_code":
-                transaction.failure_code.upper().strip(),
-
-            "retry_count":
-                max(0, transaction.retry_count),
-
-            "customer_history":
-                transaction.customer_history.upper().strip()
-        }
-    ])
+    model_input = np.array([[
+        transaction.payment_method.upper().strip(),
+        transaction.failure_code.upper().strip(),
+        transaction.customer_history.upper().strip(),
+        transaction.amount,
+        max(0, transaction.retry_count)
+    ]], dtype=object)
 
     probability = model.predict_proba(
         model_input
