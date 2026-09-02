@@ -1,4 +1,1 @@
 fastapi
-joblib
-scikit-learn
-numpy
