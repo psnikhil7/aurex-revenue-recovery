@@ -8,10 +8,7 @@ function ControlRoom({ onRecoveryComplete }) {
   const [dashboardData, setDashboardData] = useState(null);
   const [error, setError] = useState("");
 
-  // ============================================================
   // SELECTED TRANSACTION
-  // ============================================================
-
   const [transaction] = useState({
     id: "TXN-84721",
     amount: 18450,
@@ -21,10 +18,7 @@ function ControlRoom({ onRecoveryComplete }) {
     customer_history: "POSITIVE",
   });
 
-  // ============================================================
   // LIVE DETECTION TIMER
-  // ============================================================
-
   const [detectedAt] = useState(Date.now());
   const [secondsAgo, setSecondsAgo] = useState(0);
 
@@ -42,15 +36,10 @@ function ControlRoom({ onRecoveryComplete }) {
     return () => clearInterval(interval);
   }, [detectedAt]);
 
-  // ============================================================
   // FETCH DASHBOARD DATA
-  // ============================================================
-
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch(
-        /api/dashboard-metrics
-      );
+      const response = await fetch("/api/dashboard-metrics");
 
       if (!response.ok) {
         throw new Error("Dashboard request failed");
@@ -70,10 +59,7 @@ function ControlRoom({ onRecoveryComplete }) {
     fetchDashboardData();
   }, []);
 
-  // ============================================================
   // RUN AUREX RECOVERY AGENT
-  // ============================================================
-
   const executeRecovery = async () => {
     setExecuting(true);
     setRecoveryRun(null);
@@ -81,15 +67,12 @@ function ControlRoom({ onRecoveryComplete }) {
     setError("");
 
     try {
-      const response = await fetch(
-       /api/run-recovery,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("/api/run-recovery", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       const data = await response.json();
 
@@ -112,10 +95,7 @@ function ControlRoom({ onRecoveryComplete }) {
         onRecoveryComplete(data);
       }
 
-      // ========================================================
-      // SELECT TXN-84721
-      // ========================================================
-
+      // Select TXN-84721
       if (
         data.transactions &&
         data.transactions.length > 0
@@ -130,7 +110,6 @@ function ControlRoom({ onRecoveryComplete }) {
 
       // Refresh dashboard metrics
       await fetchDashboardData();
-
     } catch (err) {
       console.error("AUREX RECOVERY ERROR:", err);
       setError(err.message);
@@ -139,10 +118,7 @@ function ControlRoom({ onRecoveryComplete }) {
     }
   };
 
-  // ============================================================
   // DYNAMIC VALUES
-  // ============================================================
-
   const confidence = aiData
     ? `${(aiData.success_probability * 100).toFixed(1)}%`
     : "--";
@@ -163,30 +139,19 @@ function ControlRoom({ onRecoveryComplete }) {
     ? recoveryRun.recovered_revenue
     : 0;
 
-  // ============================================================
-  // RENDER
-  // ============================================================
-
   return (
     <section
       className="control-room"
       id="control-room"
     >
-
-      {/* ========================================================
-          HEADER
-      ======================================================== */}
-
+      {/* HEADER */}
       <div className="control-header">
-
         <div>
           <span className="control-kicker">
             AUREX / CONTROL ROOM
           </span>
 
-          <h2>
-            REVENUE INTELLIGENCE
-          </h2>
+          <h2>REVENUE INTELLIGENCE</h2>
 
           <p>
             Autonomous monitoring of failed payments
@@ -198,22 +163,13 @@ function ControlRoom({ onRecoveryComplete }) {
           <i></i>
           AI SYSTEM ONLINE
         </div>
-
       </div>
 
-
-      {/* ========================================================
-          MAIN DASHBOARD
-      ======================================================== */}
-
+      {/* MAIN DASHBOARD */}
       <div className="control-grid">
 
-        {/* ======================================================
-            TRANSACTION CARD
-        ====================================================== */}
-
+        {/* TRANSACTION CARD */}
         <div className="payment-card">
-
           <div className="card-top">
             <span>LIVE TRANSACTION</span>
             <span>{transaction.id}</span>
@@ -225,9 +181,7 @@ function ControlRoom({ onRecoveryComplete }) {
 
           <div
             className={`payment-status ${
-              recoveryRun
-                ? "status-recovered"
-                : ""
+              recoveryRun ? "status-recovered" : ""
             }`}
           >
             <i></i>
@@ -238,13 +192,10 @@ function ControlRoom({ onRecoveryComplete }) {
           </div>
 
           <div className="payment-reason">
-            {aiData
-              ? diagnosis
-              : "CARD DECLINED"}
+            {aiData ? diagnosis : "CARD DECLINED"}
           </div>
 
           <div className="payment-details">
-
             <div>
               <span>METHOD</span>
 
@@ -278,7 +229,6 @@ function ControlRoom({ onRecoveryComplete }) {
                 {riskLevel}
               </strong>
             </div>
-
           </div>
 
           <div className="payment-detected">
@@ -288,16 +238,10 @@ function ControlRoom({ onRecoveryComplete }) {
               {secondsAgo}s AGO
             </strong>
           </div>
-
         </div>
 
-
-        {/* ======================================================
-            AI ENGINE
-        ====================================================== */}
-
+        {/* AI ENGINE */}
         <div className="ai-engine">
-
           <div className="engine-label">
             AUREX AI ENGINE
           </div>
@@ -311,17 +255,13 @@ function ControlRoom({ onRecoveryComplete }) {
                 : ""
             }`}
           >
-
             <div className="core-ring">
-
               {recoveryRun
                 ? "✓"
                 : executing
                 ? "..."
                 : "AI"}
-
             </div>
-
           </div>
 
           <div
@@ -333,26 +273,21 @@ function ControlRoom({ onRecoveryComplete }) {
                 : ""
             }`}
           >
-
             {recoveryRun
               ? "RECOVERY RUN COMPLETE"
               : executing
               ? "ANALYZING PAYMENT BATCH"
               : "READY FOR RECOVERY"}
-
           </div>
 
           <div className="engine-signals">
-
             <span>✓ CUSTOMER SIGNALS</span>
             <span>✓ BANK SIGNALS</span>
             <span>✓ NETWORK SIGNALS</span>
             <span>✓ ML PREDICTION</span>
-
           </div>
 
           <div className="engine-diagnosis">
-
             <span>DIAGNOSIS</span>
 
             <strong>
@@ -360,18 +295,11 @@ function ControlRoom({ onRecoveryComplete }) {
                 ? aiData.diagnosis
                 : "WAITING"}
             </strong>
-
           </div>
-
         </div>
 
-
-        {/* ======================================================
-            DECISION CARD
-        ====================================================== */}
-
+        {/* DECISION CARD */}
         <div className="decision-card">
-
           <div className="card-top">
             <span>AI DECISION</span>
             <span>CONFIDENCE</span>
@@ -393,31 +321,21 @@ function ControlRoom({ onRecoveryComplete }) {
 
           <button
             className={`execute-btn ${
-              recoveryRun
-                ? "recovery-success"
-                : ""
+              recoveryRun ? "recovery-success" : ""
             }`}
             onClick={executeRecovery}
             disabled={executing}
           >
-
             {recoveryRun
               ? "✓ RECOVERY COMPLETE"
               : executing
               ? "RUNNING AUREX AI..."
               : "EXECUTE RECOVERY →"}
-
           </button>
 
-
-          {/* ====================================================
-              BATCH RESULT
-          ==================================================== */}
-
+          {/* BATCH RESULT */}
           {recoveryRun && (
-
             <div className="decision-result">
-
               <span>BATCH RESULT</span>
 
               <strong>
@@ -429,40 +347,23 @@ function ControlRoom({ onRecoveryComplete }) {
                     maximumFractionDigits: 2,
                   }
                 )}
-
                 {" "}RECOVERED
               </strong>
-
             </div>
-
           )}
 
-
-          {/* ====================================================
-              ERROR
-          ==================================================== */}
-
+          {/* ERROR */}
           {error && (
-
             <div className="error-message">
               ERROR: {error}
             </div>
-
           )}
-
         </div>
-
       </div>
 
-
-      {/* ========================================================
-          RECOVERY PIPELINE
-      ======================================================== */}
-
+      {/* RECOVERY PIPELINE */}
       <div className="recovery-pipeline">
-
         <div className="pipeline-step active">
-
           <span>01</span>
 
           <strong>FAILED</strong>
@@ -470,19 +371,15 @@ function ControlRoom({ onRecoveryComplete }) {
           <small>
             Payment detected
           </small>
-
         </div>
 
         <div className="pipeline-line"></div>
 
         <div
           className={`pipeline-step ${
-            recoveryRun
-              ? "active"
-              : ""
+            recoveryRun ? "active" : ""
           }`}
         >
-
           <span>02</span>
 
           <strong>DIAGNOSED</strong>
@@ -492,19 +389,15 @@ function ControlRoom({ onRecoveryComplete }) {
               ? aiData.diagnosis
               : "Awaiting analysis"}
           </small>
-
         </div>
 
         <div className="pipeline-line"></div>
 
         <div
           className={`pipeline-step ${
-            recoveryRun
-              ? "active"
-              : ""
+            recoveryRun ? "active" : ""
           }`}
         >
-
           <span>03</span>
 
           <strong>DECISION</strong>
@@ -514,7 +407,6 @@ function ControlRoom({ onRecoveryComplete }) {
               ? aiData.recommended_action
               : "Awaiting AI"}
           </small>
-
         </div>
 
         <div className="pipeline-line"></div>
@@ -526,7 +418,6 @@ function ControlRoom({ onRecoveryComplete }) {
               : "recovered"
           }`}
         >
-
           <span>04</span>
 
           <strong>
@@ -540,24 +431,15 @@ function ControlRoom({ onRecoveryComplete }) {
               ? "Revenue captured"
               : "Awaiting recovery"}
           </small>
-
         </div>
-
       </div>
 
-
-      {/* ========================================================
-          BATCH RECOVERY SUMMARY
-      ======================================================== */}
-
+      {/* BATCH RECOVERY SUMMARY */}
       <div className="control-summary">
-
         <div>
-
           <span>REVENUE AT RISK</span>
 
           <strong>
-
             {recoveryRun
               ? `₹${recoveryRun.revenue_at_risk.toLocaleString(
                   "en-IN"
@@ -567,18 +449,13 @@ function ControlRoom({ onRecoveryComplete }) {
                   "en-IN"
                 )}`
               : "--"}
-
           </strong>
-
         </div>
 
-
         <div>
-
           <span>RECOVERED REVENUE</span>
 
           <strong>
-
             {recoveryRun
               ? `₹${recoveryRun.recovered_revenue.toLocaleString(
                   "en-IN",
@@ -588,87 +465,58 @@ function ControlRoom({ onRecoveryComplete }) {
                   }
                 )}`
               : "--"}
-
           </strong>
-
         </div>
 
-
         <div>
-
           <span>RECOVERY RATE</span>
 
           <strong>
-
             {recoveryRun
               ? `${recoveryRun.recovery_rate}%`
               : "--"}
-
           </strong>
-
         </div>
 
-
         <div>
-
           <span>ACTIONS EXECUTED</span>
 
           <strong>
-
             {recoveryRun
               ? recoveryRun.executed
               : "--"}
-
           </strong>
-
         </div>
-
       </div>
 
-
-      {/* ========================================================
-          AGENT OUTCOME
-      ======================================================== */}
-
+      {/* AGENT OUTCOME */}
       {recoveryRun && (
-
         <div className="control-summary">
-
           <div>
-
             <span>BATCH PROCESSED</span>
 
             <strong>
               {recoveryRun.batch_size}
             </strong>
-
           </div>
 
-
           <div>
-
             <span>ESCALATED</span>
 
             <strong>
               {recoveryRun.escalated}
             </strong>
-
           </div>
 
-
           <div>
-
             <span>STOPPED</span>
 
             <strong>
               {recoveryRun.stopped}
             </strong>
-
           </div>
 
-
           <div>
-
             <span>AI MODEL</span>
 
             <strong>
@@ -676,22 +524,14 @@ function ControlRoom({ onRecoveryComplete }) {
                 ? "ONLINE"
                 : "OFFLINE"}
             </strong>
-
           </div>
-
         </div>
-
       )}
 
-
-      {/* ========================================================
-          RECOVERY ACTIVITY — ONLY ONE
-      ======================================================== */}
-
+      {/* RECOVERY ACTIVITY */}
       <RecoveryActivity
         activity={recoveryRun?.audit_log || []}
       />
-
     </section>
   );
 }

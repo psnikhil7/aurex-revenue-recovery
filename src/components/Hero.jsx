@@ -10,9 +10,7 @@ function Hero() {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await fetch(
-          /api/dashboard-metrics
-        );
+        const response = await fetch("/api/dashboard-metrics");
 
         if (!response.ok) {
           throw new Error("Failed to load dashboard data");
