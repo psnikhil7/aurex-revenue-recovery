@@ -628,7 +628,7 @@ def predict_recovery(transaction):
 # ANALYZE TRANSACTION
 # ============================================================
 
-@app.post("/analyze-transaction")
+@app.post("/api/analyze-transaction")
 def analyze_transaction(
     transaction: Transaction
 ):
@@ -1043,7 +1043,7 @@ def dashboard_metrics():
 # AUREX LIVE RECOVERY RUN
 # ============================================================
 
-@app.post("/run-recovery")
+@app.post("/api/run-recovery")
 def run_recovery():
 
     audit_log = []

@@ -456,7 +456,7 @@ def predict_recovery(transaction: Transaction):
 # ANALYZE TRANSACTION
 # ============================================================
 
-@app.post("/analyze-transaction")
+@app.post("/api/analyze-transaction")
 def analyze_transaction(transaction: Transaction):
 
     result = predict_recovery(transaction)
